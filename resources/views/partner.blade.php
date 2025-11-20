@@ -4,22 +4,21 @@
 @section('page-title', 'Dashboard')
 
 @section('content')
-    <section class="container-fluid p-0">
-        <div class="hero-short">
-            <div class="hero-overlay"></div>
-            <div class="hero-content">
-                <h1>Partner & Jaringan Kami</h1>
-                <nav aria-label="breadcrumb">
-                    <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                        <li class="breadcrumb-item active" aria-current="page">Partner</li>
-                    </ol>
-                </nav>
-            </div>
+
+    <section class="page-hero container-fluid" style="background-image: url({{ asset('images/hero/partner.png') }});">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1 class="display-4 font-weight-bold">Partner & Jaringan Kami</h1>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="{{ URL::to('/') }}">Home</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Partner</li>
+                </ol>
+            </nav>
         </div>
     </section>
 
-    <section class="container">
+    <section class="container py-5">
         <div class="row">
             <div class="col-md-10 offset-md-1 text-center">
                 <h2 class="mb-4">Komitmen pada Keaslian dan Kemitraan</h2>
@@ -33,53 +32,123 @@
         </div>
     </section>
 
-    <section class="container">
+    <section class="container pb-5">
         <div class="row">
-            <div class="col-12 text-center mb-5">
-                <h2>Brand yang Kami Distribusikan Secara Resmi</h2>
-                <p>Kami bangga menjadi distributor resmi untuk brand kaca film terkemuka di dunia.</p>
+            <div class="col-12 text-center mb-3">
+                <h2>Dipercaya oleh Jaringan Workshop</h2>
+                <p>Kami mendukung ratusan workshop dan reseller di seluruh penjuru negeri.</p>
             </div>
         </div>
 
-        <div class="row">
-            <!-- Card Brand 1 -->
-            <div class="col-lg-4 col-md-6 mb-4">
-                <div class="card brand-card">
-                    <img src="https://placehold.co/400x150/ffffff/000000?text=3M+Logo&font=roboto" class="card-img-top"
-                        alt="Logo 3M">
-                    <div class="card-body">
-                        <h5 class="card-title">3M Automotive Window Films</h5>
-                        <p class="card-text">Sebagai pelopor dalam teknologi kaca film, 3M menawarkan perlindungan superior
-                            terhadap panas dan UV dengan kejernihan optik yang tak tertandingi.</p>
-                        <a href="#" class="btn btn-danger mt-3">Lihat Produk 3M</a>
+        <div class="row d-flex justify-content-center">
+            <div class="col-lg-3 col-md-4 mb-4">
+                <div class="card partner-card h-100">
+                    <div class="card-body text-center">
+                        <h6 class="text-center mb-2">
+                            <b>STAR KACA FILM SUMMARECON BEKASI</b>
+                        </h6>
+                        <p class="card-text text-white-50">
+                            Axc Summarecon No VE 12 / VE 15, Marga Mulya, Kec. Bekasi Utara, Kota Bks, Jawa Barat 17142
+                        </p>
+                        <a target="_blank" href="#" class="btn btn-kuning btn-sm">
+                            <i class="fas fa-phone-alt"></i> 081212096805
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-3 col-md-4 mb-4">
+                <div class="card partner-card h-100">
+                    <div class="card-body text-center">
+                        <h6 class="text-center mb-2">
+                            <b>STIKERINDO ( JASA PRINTING STIKER )</b>
+                        </h6>
+                        <p class="card-text text-white-50">
+                            Jl Parakan No 28 , Pondok Benda, Kec Pamulang, Kota Tangerang Selatan, Banten 15416
+                        </p>
+                        <a target="_blank" href="#" class="btn btn-kuning btn-sm">
+                            <i class="fas fa-phone-alt"></i> 081218692589
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-3 col-md-4 mb-4">
+                <div class="card partner-card h-100">
+                    <div class="card-body text-center">
+                        <h6 class="text-center mb-2">
+                            <b>AUTOMOBO ( DETAILING & COATING )</b>
+                        </h6>
+                        <p class="card-text text-white-50">
+                            Ruko Mendrisio 3 Blok C No 3 Cihuni, Kec Pagedangan Kab. Tangerang, Banten
+                        </p>
+                        <a target="_blank" href="#" class="btn btn-kuning btn-sm">
+                            <i class="fas fa-phone-alt"></i> 085218318696
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-3 col-md-4 mb-4">
+                <div class="card partner-card h-100">
+                    <div class="card-body text-center">
+                        <h6 class="text-center mb-2">
+                            <b>AVIS COVER JOK SANGKURIANG CARWASH</b>
+                        </h6>
+                        <p class="card-text text-white-50">
+                            Jl Sangkuriang No 55, Cipageran, Kec.Cimahi Utara, Kota Cimahi, Jawa Barat 40511.
+                        </p>
+                        <a target="_blank" href="#" class="btn btn-kuning btn-sm">
+                            <i class="fas fa-phone-alt"></i> 081284987820
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-3 col-md-4 mb-4">
+                <div class="card partner-card h-100">
+                    <div class="card-body text-center">
+                        <h6 class="text-center mb-2">
+                            <b>SCUTO SUDIRMAN</b>
+                        </h6>
+                        <p class="card-text text-white-50">
+                            Jl Jendral Sudirman No 631b wr Muncang Kec Bandung Kulon.
+                        </p>
+                        <a target="_blank" href="#" class="btn btn-kuning btn-sm">
+                            <i class="fas fa-phone-alt"></i> 081288887123
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-3 col-md-4 mb-4">
+                <div class="card partner-card h-100">
+                    <div class="card-body text-center">
+                        <h6 class="text-center mb-2">
+                            <b>AUTOMOBO</b>
+                        </h6>
+                        <p class="card-text text-white-50">
+                            Jl Caringin No 27 , Babakan Ciparay, Kota Bandung,  Jawa Barat 40223.
+                        </p>
+                        <a target="_blank" href="#" class="btn btn-kuning btn-sm">
+                            <i class="fas fa-phone-alt"></i> 08324730209
+                        </a>
                     </div>
                 </div>
             </div>
 
-            <!-- Card Brand 2 -->
-            <div class="col-lg-4 col-md-6 mb-4">
-                <div class="card brand-card">
-                    <img src="https://placehold.co/400x150/ffffff/000000?text=V-KOOL+Logo&font=roboto" class="card-img-top"
-                        alt="Logo V-Kool">
-                    <div class="card-body">
-                        <h5 class="card-title">V-KOOL</h5>
-                        <p class="card-text">Dikenal dengan teknologi XIR® eksklusifnya, V-Kool adalah pemimpin pasar
-                            premium yang menawarkan penolakan panas inframerah terbaik di kelasnya.</p>
-                        <a href="#" class="btn btn-danger mt-3">Lihat Produk V-Kool</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Card Brand 3 -->
-            <div class="col-lg-4 col-md-6 mb-4">
-                <div class="card brand-card">
-                    <img src="https://placehold.co/400x150/ffffff/000000?text=Huper+Optik+Logo&font=roboto"
-                        class="card-img-top" alt="Logo Huper Optik">
-                    <div class="card-body">
-                        <h5 class="card-title">Hüper Optik</h5>
-                        <p class="card-text">Menggunakan teknologi Nano-Ceramic canggih dari Jerman, Hüper Optik memberikan
-                            daya tahan dan performa tolak panas yang luar biasa tanpa gangguan sinyal.</p>
-                        <a href="#" class="btn btn-danger mt-3">Lihat Produk Hüper Optik</a>
+            <div class="col-lg-3 col-md-4 mb-4">
+                <div class="card partner-card h-100">
+                    <div class="card-body text-center">
+                        <h6 class="text-center mb-2">
+                            <b>JAGOAN STIKER</b>
+                        </h6>
+                        <p class="card-text text-white-50">
+                            Jl Sukapura No 64 Kec Dayeuhkolot, Kota Bandung, Jawa Barat.
+                        </p>
+                        <a target="_blank" href="#" class="btn btn-kuning btn-sm">
+                            <i class="fas fa-phone-alt"></i> 081220459994
+                        </a>
                     </div>
                 </div>
             </div>
@@ -90,30 +159,34 @@
         <div class="container">
             <div class="row">
                 <div class="col-12 text-center mb-4">
-                    <h2>Dipercaya oleh Jaringan Workshop</h2>
-                    <p>Kami mendukung ratusan workshop dan reseller di seluruh penjuru negeri.</p>
+                    <h2>Brand yang Kami Distribusikan Secara Resmi</h2>
+                    <p>Kami bangga menjadi distributor resmi untuk brand kaca film terkemuka di dunia.</p>
                 </div>
             </div>
             <div class="owl-carousel owl-theme logo-carousel">
-                <div class="item"><img src="https://placehold.co/150x80/777/FFF?text=Workshop+1" alt="Logo Workshop 1">
+                <div class="item"><img src="{{ asset('images/brand/3m.png') }}" alt="ourbrand">
                 </div>
-                <div class="item"><img src="https://placehold.co/150x80/777/FFF?text=Reseller+A" alt="Logo Reseller A">
+                <div class="item"><img src="{{ asset('images/brand/ice.png') }}" alt="ourbrand">
                 </div>
-                <div class="item"><img src="https://placehold.co/150x80/777/FFF?text=Toko+Otomotif"
-                        alt="Logo Toko Otomotif"></div>
-                <div class="item"><img src="https://placehold.co/150x80/777/FFF?text=Workshop+2" alt="Logo Workshop 2">
+                <div class="item"><img src="{{ asset('images/brand/ilumi.png') }}" alt="ourbrand">
                 </div>
-                <div class="item"><img src="https://placehold.co/150x80/777/FFF?text=Auto+Detailing"
-                        alt="Logo Auto Detailing"></div>
-                <div class="item"><img src="https://placehold.co/150x80/777/FFF?text=Workshop+3" alt="Logo Workshop 3">
+                <div class="item"><img src="{{ asset('images/brand/llumar.png') }}" alt="ourbrand">
                 </div>
-                <div class="item"><img src="https://placehold.co/150x80/777/FFF?text=Reseller+B" alt="Logo Reseller B">
+                <div class="item"><img src="{{ asset('images/brand/n1.png') }}" alt="ourbrand">
+                </div>
+                <div class="item"><img src="{{ asset('images/brand/solar.png') }}" alt="ourbrand">
+                </div>
+                <div class="item"><img src="{{ asset('images/brand/perfect.png') }}" alt="ourbrand">
+                </div>
+                <div class="item"><img src="{{ asset('images/brand/una.png') }}" alt="ourbrand">
+                </div>
+                <div class="item"><img src="{{ asset('images/brand/vkool.png') }}" alt="ourbrand">
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="container">
+    <section class="container py-5">
         <div class="row">
             <div class="col-12 text-center mb-5">
                 <h2>Tertarik Menjadi Partner Kami?</h2>
@@ -148,8 +221,7 @@
                     </div>
                     <div class="form-row">
                         <div class="form-group col-md-6">
-                            <input type="email" class="form-control" id="email" placeholder="Email Bisnis"
-                                required>
+                            <input type="email" class="form-control" id="email" placeholder="Email Bisnis" required>
                         </div>
                         <div class="form-group col-md-6">
                             <input type="tel" class="form-control" id="telepon" placeholder="No. Telepon / WA"
@@ -168,7 +240,7 @@
                         <textarea class="form-control" id="pesan" rows="4"
                             placeholder="Tulis pesan singkat mengenai bisnis Anda..."></textarea>
                     </div>
-                    <button type="submit" class="btn btn-danger btn-block">Ajukan Kemitraan</button>
+                    <button type="submit" class="btn btn-merah btn-block">Ajukan Kemitraan</button>
                 </form>
             </div>
         </div>

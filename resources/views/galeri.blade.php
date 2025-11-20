@@ -5,20 +5,20 @@
 
 @section('content')
 
-    <section class="gallery-hero container-fluid p-0">
+    <section class="page-hero container-fluid" style="background-image: url({{ asset('images/hero/galeri.png') }});">
         <div class="hero-overlay"></div>
         <div class="hero-content">
             <h1 class="display-4 font-weight-bold">Galeri Portofolio Kami</h1>
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                    <li class="breadcrumb-item"><a href="{{ URL::to('/') }}">Home</a></li>
                     <li class="breadcrumb-item active" aria-current="page">Galeri</li>
                 </ol>
             </nav>
         </div>
     </section>
 
-    <section class="filter-controls text-center">
+    <section class="filter-controls text-center py-4">
         <div class="container">
             <div class="btn-group filter-btn-group" role="group" aria-label="Filter Galeri">
                 <button type="button" class="btn active" data-filter="*">Semua</button>
@@ -34,10 +34,10 @@
 
                 <div class="col-lg-4 col-md-6 mb-4 gallery-item-wrapper mobil">
                     <div class="gallery-item">
-                        <a href="https://placehold.co/800x600/333/fff?text=Pemasangan+Alphard"
-                            data-lightbox="galeri-portofolio" data-title="Pemasangan Kaca Film 3M di Toyota Alphard">
-                            <img src="https://placehold.co/400x300/333/fff?text=Mobil+1" class="img-fluid"
-                                alt="Pemasangan Toyota Alphard">
+                        <a href="{{ asset('images/galeri/g1.jpg') }}"
+                            data-lightbox="galeri-portofolio" data-title="Pemasangan Llumar">
+                            <img src="{{ asset('images/galeri/g1.jpg') }}" class="img-fluid"
+                                alt="Pemasangan Llumar">
                             <div class="overlay-icon"><i class="fas fa-search-plus"></i></div>
                         </a>
                     </div>
@@ -45,10 +45,10 @@
 
                 <div class="col-lg-4 col-md-6 mb-4 gallery-item-wrapper gedung">
                     <div class="gallery-item">
-                        <a href="https://placehold.co/800x600/555/fff?text=Pemasangan+Gedung+A"
+                        <a href="{{ asset('images/galeri/p1.png') }}"
                             data-lightbox="galeri-portofolio"
                             data-title="Pemasangan Kaca Film Oneway di Gedung Perkantoran">
-                            <img src="https://placehold.co/400x300/555/fff?text=Gedung+1" class="img-fluid"
+                            <img src="{{ asset('images/galeri/p1.png') }}" class="img-fluid"
                                 alt="Pemasangan Kaca Film Gedung">
                             <div class="overlay-icon"><i class="fas fa-search-plus"></i></div>
                         </a>
@@ -57,10 +57,10 @@
 
                 <div class="col-lg-4 col-md-6 mb-4 gallery-item-wrapper mobil">
                     <div class="gallery-item">
-                        <a href="https://placehold.co/800x600/333/fff?text=Pemasangan+Pajero"
-                            data-lightbox="galeri-portofolio" data-title="Pemasangan Kaca Film V-Kool di Mitsubishi Pajero">
-                            <img src="https://placehold.co/400x300/333/fff?text=Mobil+2" class="img-fluid"
-                                alt="Pemasangan Mitsubishi Pajero">
+                        <a href="{{ asset('images/galeri/g2.jpg') }}"
+                            data-lightbox="galeri-portofolio" data-title="Pemasangan Kaca Film Depan">
+                            <img src="{{ asset('images/galeri/g2.jpg') }}" class="img-fluid"
+                                alt="Pemasangan Kaca Film Depan">
                             <div class="overlay-icon"><i class="fas fa-search-plus"></i></div>
                         </a>
                     </div>
@@ -68,10 +68,10 @@
 
                 <div class="col-lg-4 col-md-6 mb-4 gallery-item-wrapper mobil">
                     <div class="gallery-item">
-                        <a href="https://placehold.co/800x600/333/fff?text=Pemasangan+Civic"
-                            data-lightbox="galeri-portofolio" data-title="Pemasangan Kaca Film Solar Gard di Honda Civic">
-                            <img src="https://placehold.co/400x300/333/fff?text=Mobil+3" class="img-fluid"
-                                alt="Pemasangan Honda Civic">
+                        <a href="{{ asset('images/galeri/g3.jpg') }}"
+                            data-lightbox="galeri-portofolio" data-title="Pemasangan Kaca Film 3M Cristalline">
+                            <img src="{{ asset('images/galeri/g3.jpg') }}" class="img-fluid"
+                                alt="Pemasangan Kaca Film 3M Cristalline">
                             <div class="overlay-icon"><i class="fas fa-search-plus"></i></div>
                         </a>
                     </div>
@@ -79,9 +79,9 @@
 
                 <div class="col-lg-4 col-md-6 mb-4 gallery-item-wrapper gedung">
                     <div class="gallery-item">
-                        <a href="https://placehold.co/800x600/555/fff?text=Pemasangan+Ruko"
+                        <a href="{{ asset('images/galeri/p2.png') }}"
                             data-lightbox="galeri-portofolio" data-title="Pemasangan Stiker Sandblast di Ruko Minimalis">
-                            <img src="https://placehold.co/400x300/555/fff?text=Gedung+2" class="img-fluid"
+                            <img src="{{ asset('images/galeri/p2.png') }}" class="img-fluid"
                                 alt="Pemasangan Stiker Sandblast Ruko">
                             <div class="overlay-icon"><i class="fas fa-search-plus"></i></div>
                         </a>
@@ -90,9 +90,9 @@
 
                 <div class="col-lg-4 col-md-6 mb-4 gallery-item-wrapper gedung">
                     <div class="gallery-item">
-                        <a href="https://placehold.co/800x600/555/fff?text=Pemasangan+Kafe"
+                        <a href="{{ asset('images/galeri/p3.png') }}"
                             data-lightbox="galeri-portofolio" data-title="Pemasangan Kaca Film Riben di Jendela Kafe">
-                            <img src="https://placehold.co/400x300/555/fff?text=Gedung+3" class="img-fluid"
+                            <img src="{{ asset('images/galeri/p3.png') }}" class="img-fluid"
                                 alt="Pemasangan Kaca Film Kafe">
                             <div class="overlay-icon"><i class="fas fa-search-plus"></i></div>
                         </a>
@@ -101,10 +101,10 @@
 
                 <div class="col-lg-4 col-md-6 mb-4 gallery-item-wrapper mobil">
                     <div class="gallery-item">
-                        <a href="https://placehold.co/800x600/333/fff?text=Pemasangan+CRV" data-lightbox="galeri-portofolio"
-                            data-title="Pemasangan Kaca Film Hitam di Honda CR-V">
-                            <img src="https://placehold.co/400x300/333/fff?text=Mobil+4" class="img-fluid"
-                                alt="Pemasangan Honda CR-V">
+                        <a href="{{ asset('images/galeri/g7.jpg') }}" data-lightbox="galeri-portofolio"
+                            data-title="Pemasangan Solar Gard">
+                            <img src="{{ asset('images/galeri/g7.jpg') }}" class="img-fluid"
+                                alt="Pemasangan Solar Gard">
                             <div class="overlay-icon"><i class="fas fa-search-plus"></i></div>
                         </a>
                     </div>
@@ -112,11 +112,11 @@
 
                 <div class="col-lg-4 col-md-6 mb-4 gallery-item-wrapper mobil">
                     <div class="gallery-item">
-                        <a href="https://placehold.co/800x600/333/fff?text=Pemasangan+Xpander"
+                        <a href="{{ asset('images/galeri/g5.jpg') }}"
                             data-lightbox="galeri-portofolio"
-                            data-title="Pemasangan Kaca Film Masterpiece di Mitsubishi Xpander">
-                            <img src="https://placehold.co/400x300/333/fff?text=Mobil+5" class="img-fluid"
-                                alt="Pemasangan Mitsubishi Xpander">
+                            data-title="Pemasangan Kaca Film Ilumi">
+                            <img src="{{ asset('images/galeri/g5.jpg') }}" class="img-fluid"
+                                alt="Pemasangan Kaca Film Ilumi">
                             <div class="overlay-icon"><i class="fas fa-search-plus"></i></div>
                         </a>
                     </div>
@@ -124,9 +124,9 @@
 
                 <div class="col-lg-4 col-md-6 mb-4 gallery-item-wrapper gedung">
                     <div class="gallery-item">
-                        <a href="https://placehold.co/800x600/555/fff?text=Pemasangan+Apartemen"
+                        <a href="{{ asset('images/galeri/p4.png') }}"
                             data-lightbox="galeri-portofolio" data-title="Pemasangan Kaca Film di Balkon Apartemen">
-                            <img src="https://placehold.co/400x300/555/fff?text=Gedung+4" class="img-fluid"
+                            <img src="{{ asset('images/galeri/p4.png') }}" class="img-fluid"
                                 alt="Pemasangan Kaca Film Apartemen">
                             <div class="overlay-icon"><i class="fas fa-search-plus"></i></div>
                         </a>

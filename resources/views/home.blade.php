@@ -28,7 +28,7 @@
         </div>
     </section>
 
-    <section id="tentang-kami" class="section-padding">
+    <section id="tentang-kami" class="section-padding bg-dark">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-6 mb-4 mb-lg-0 pr-lg-4">
@@ -52,7 +52,70 @@
         </div>
     </section>
 
-    <section id="produk-kami" class="section-padding" style="background-color: var(--warna-latar-sekunder);">
+    <section id="outlet-kami" class="section-padding bg-light">
+        <div class="container">
+            <div class="section-title">
+                <h2>
+                    Outlet Tersedia di Berbagai Kota
+                </h2>
+                <p>
+                    Temukan lokasi outlet resmi Mantra Sakti terdekat di kota Anda.
+                </p>
+            </div>
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="card">
+                        <img src="{{ asset('images/outlet/bandung.png') }}">
+                        <div class="card-body">
+                            <h3 class="title">Mantra Sakti - Bandung</h3>
+                            <p class="desc"> Jl. Mekar Puspita No.23, Cibaduyut, Kec. Bojongloa Kidul</p>
+                            <div class="meta">
+                                <span>📞 0812-4400-0805</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card">
+                        <img src="{{ asset('images/outlet/bekasi.png') }}">
+                        <div class="card-body">
+                            <h3 class="title">Mantra Sakti - Bekasi</h3>
+                            <p class="desc"> Grand Wisata, Ruko AA 15 No.16, Lambangsari, Tambun Selatan</p>
+                            <div class="meta">
+                                <span>📞 0813-2323-0805</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card">
+                        <img src="{{ asset('images/outlet/tangerang.png') }}">
+                        <div class="card-body">
+                            <h3 class="title">Mantra Sakti - Tangerang</h3>
+                            <p class="desc"> Ruko Mendrisio, Jl. Boulevard iL Lago No.68, Cihuni, Kec. Pagedangan</p>
+                            <div class="meta">
+                                <span>📞 0821-1000-2805</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card">
+                        <img src="{{ asset('images/outlet/cibubur.png') }}">
+                        <div class="card-body">
+                            <h3 class="title">Mantra Sakti - Cibubur</h3>
+                            <p class="desc"> Jl Alternatif Cibubur, Cibubur Point Automotif Center Ruko Blok B5</p>
+                            <div class="meta">
+                                <span>📞 0812-1100-9805</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="produk-kami" class="section-padding bg-dark">
         <div class="container">
             <div class="section-title">
                 <h2>Produk & Layanan Kami</h2>
@@ -85,7 +148,7 @@
         </div>
     </section>
 
-    <section id="keunggulan" class="section-padding">
+    <section id="keunggulan" class="section-padding bg-light">
         <div class="container">
             <div class="section-title">
                 <h2>Mengapa Memilih Mantra Sakti?</h2>
@@ -128,7 +191,7 @@
         </div>
     </section>
 
-    <section id="galeri" class="section-padding" style="background-color: var(--warna-latar-sekunder);">
+    <section id="galeri" class="section-padding bg-dark">
         <div class="container">
             <div class="section-title">
                 <h2>Portofolio Pemasangan Kami</h2>
@@ -221,7 +284,7 @@
         </div>
     </section>
 
-    <section id="testimoni" class="section-padding">
+    <section id="testimoni" class="section-padding bg-light">
         <div class="container">
             <div class="section-title">
                 <h2>Apa Kata Pelanggan Kami</h2>
@@ -276,7 +339,7 @@
         </div>
     </section>
 
-    <section id="partner" class="section-padding">
+    <section id="partner" class="section-padding bg-dark">
         <div class="container">
             <div class="section-title">
                 <h2>Brand Partner Resmi Kami</h2>
@@ -307,14 +370,17 @@
                 <div class="col-lg-2 col-md-4 col-6 partner-logo">
                     <img src="{{ asset('images/brand/una.png') }}" alt="Partner 6" class="img-fluid">
                 </div>
+                <div class="col-lg-2 col-md-4 col-6 partner-logo">
+                    <img src="{{ asset('images/brand/vkool.png') }}" alt="Partner 6" class="img-fluid">
+                </div>
             </div>
         </div>
     </section>
 
-    <section id="kontak-outlet" class="section-padding" style="background-color: var(--warna-latar-sekunder);">
+    <section id="kontak-outlet" class="section-padding bg-light">
         <div class="container">
             <div class="section-title">
-                <h2>Hubungi Kami & Temukan Outlet</h2>
+                <h2>Hubungi Kami</h2>
                 <p>Siap membantu kebutuhan Anda di Kantor Pusat atau cabang terdekat.</p>
             </div>
 
@@ -365,7 +431,9 @@
                         </p>
                         <p>
                             <i class="fab fa-instagram"></i>
-                            <a class="text-white-50" href="https://www.instagram.com/mantrasaktiautofilm?igshid=ZmVmZTY5ZGE%3D" target="_blank">
+                            <a class="text-white-50"
+                                href="https://www.instagram.com/mantrasaktiautofilm?igshid=ZmVmZTY5ZGE%3D"
+                                target="_blank">
                                 @mantrasaktiautofilm
                             </a>
                         </p>
@@ -377,22 +445,25 @@
                 </div>
             </div>
 
-            <div id="daftar-outlet" class="pt-5">
+            {{-- <div id="daftar-outlet" class="pt-5">
                 <h3 class="text-center mb-4">Jaringan Outlet Resmi Kami</h3>
                 <div class="row">
                     <div class="col-lg-4 col-md-6 mb-4">
                         <div class="card outlet-card h-100">
                             <div class="card-body">
-                                <h5 class="card-title" style="color: var(--warna-kuning-aksen);">
-                                    Mantra Sakti - Bekasi
+                                <h5 class="card-title mb-2" style="color: var(--warna-kuning-aksen);">
+                                    <b>Mantra Sakti - Bekasi</b>
                                 </h5>
                                 <p class="card-text text-white-50">
-                                    Grand Wisata, Ruko AA 15 No.16, Lambangsari, Tambun Selatan, Bekasi Regency, West Java 17510
+                                    Grand Wisata, Ruko AA 15 No.16, Lambangsari, Tambun Selatan, Bekasi Regency, West Java
+                                    17510
                                 </p>
                                 <p class="card-text text-white-50">
                                     <i class="fas fa-phone-alt"></i> 0813-2323-0805
                                 </p>
-                                <a target="_blank" href="https://www.google.com/maps?ll=-6.283755,107.043247&z=20&t=m&hl=id&gl=US&mapclient=embed&q=Grand+Wisata,+Ruko+AA+15+No.16,+Lambangsari,+Tambun+Selatan,+Bekasi+Regency,+West+Java+17510,+Indonesia" class="btn btn-kuning btn-sm">
+                                <a target="_blank"
+                                    href="https://www.google.com/maps?ll=-6.283755,107.043247&z=20&t=m&hl=id&gl=US&mapclient=embed&q=Grand+Wisata,+Ruko+AA+15+No.16,+Lambangsari,+Tambun+Selatan,+Bekasi+Regency,+West+Java+17510,+Indonesia"
+                                    class="btn btn-kuning btn-sm">
                                     Lihat Google Maps
                                 </a>
                             </div>
@@ -401,16 +472,19 @@
                     <div class="col-lg-4 col-md-6 mb-4">
                         <div class="card outlet-card h-100">
                             <div class="card-body">
-                                <h5 class="card-title" style="color: var(--warna-kuning-aksen);">
-                                    Mantra Sakti - Tangerang
+                                <h5 class="card-title mb-2" style="color: var(--warna-kuning-aksen);">
+                                    <b>Mantra Sakti - Tangerang</b>
                                 </h5>
                                 <p class="card-text text-white-50">
-                                    Ruko Mendrisio, Jl. Boulevard iL Lago No.68, Cihuni, Kec. Pagedangan, Kabupaten Tangerang, Banten 15334
+                                    Ruko Mendrisio, Jl. Boulevard iL Lago No.68, Cihuni, Kec. Pagedangan, Kabupaten
+                                    Tangerang, Banten 15334
                                 </p>
                                 <p class="card-text text-white-50">
                                     <i class="fas fa-phone-alt"></i> 0821-1000-2805
                                 </p>
-                                <a target="_blank" href="https://www.google.com/maps?ll=-6.26797,106.630905&z=19&t=m&hl=id&gl=US&mapclient=embed&q=Ruko+Mendrisio,+Jl.+Boulevard+iL+Lago+No.68,+Cihuni,+Kec.+Pagedangan,+Kabupaten+Tangerang,+Banten+15334,+Indonesia" class="btn btn-kuning btn-sm">
+                                <a target="_blank"
+                                    href="https://www.google.com/maps?ll=-6.26797,106.630905&z=19&t=m&hl=id&gl=US&mapclient=embed&q=Ruko+Mendrisio,+Jl.+Boulevard+iL+Lago+No.68,+Cihuni,+Kec.+Pagedangan,+Kabupaten+Tangerang,+Banten+15334,+Indonesia"
+                                    class="btn btn-kuning btn-sm">
                                     Lihat Google Maps
                                 </a>
                             </div>
@@ -419,21 +493,24 @@
                     <div class="col-lg-4 col-md-6 mb-4">
                         <div class="card outlet-card h-100">
                             <div class="card-body">
-                                <h5 class="card-title" style="color: var(--warna-kuning-aksen);">
-                                    Mantra Sakti - Cibubur
+                                <h5 class="card-title mb-2" style="color: var(--warna-kuning-aksen);">
+                                    <b>Mantra Sakti - Cibubur</b>
                                 </h5>
                                 <p class="card-text text-white-50">
-                                    Jl Alternatif Cibubur, Cibubur Point Automotif Center Ruko Blok B5, Kota Depok, Jawa Barat 16454
+                                    Jl Alternatif Cibubur, Cibubur Point Automotif Center Ruko Blok B5, Kota Depok, Jawa
+                                    Barat 16454
                                 </p>
                                 <p class="card-text text-white-50">
                                     <i class="fas fa-phone-alt"></i> 0812-1100-9805
                                 </p>
-                                <a target="_blank" href="https://www.google.com/maps?ll=-6.376698,106.897967&z=21&t=m&hl=id&gl=US&mapclient=embed&q=Jl+Alternatif+Cibubur,+Cibubur+Point+Automotif+Center+Ruko+Blok+B5,+Kota+Depok,+Jawa+Barat+16454,+Indonesia" class="btn btn-kuning btn-sm">Lihat Google Maps</a>
+                                <a target="_blank"
+                                    href="https://www.google.com/maps?ll=-6.376698,106.897967&z=21&t=m&hl=id&gl=US&mapclient=embed&q=Jl+Alternatif+Cibubur,+Cibubur+Point+Automotif+Center+Ruko+Blok+B5,+Kota+Depok,+Jawa+Barat+16454,+Indonesia"
+                                    class="btn btn-kuning btn-sm">Lihat Google Maps</a>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> --}}
         </div>
     </section>
 @endsection

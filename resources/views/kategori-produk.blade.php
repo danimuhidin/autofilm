@@ -4,13 +4,13 @@
 @section('page-title', 'Dashboard')
 
 @section('content')
-    <section class="hero-kategori container-fluid p-0">
-        <div class="container">
-            <h1 class="display-4">Kaca Film Mobil</h1>
-            <!-- Breadcrumb -->
+    <section class="page-hero container-fluid" style="background-image: url({{ asset('images/hero/kategori.png') }});">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1 class="display-4 font-weight-bold">Kaca Film Mobil</h1>
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                    <li class="breadcrumb-item"><a href="{{ url('/') }}">Home</a></li>
                     <li class="breadcrumb-item"><a href="#">Produk Kami</a></li>
                     <li class="breadcrumb-item active" aria-current="page">Kaca Film Mobil</li>
                 </ol>
@@ -21,7 +21,7 @@
     <section class="deskripsi-kategori py-5">
         <div class="container py-4">
             <div class="row align-items-center">
-                <div class="col-lg-7 mb-4 mb-lg-0">
+                <div class="col-lg-7 mb-4 mb-lg-0 pr-md-3">
                     <h2 class="mb-3">Solusi Privasi dan Perlindungan Total Untuk Mobil Anda</h2>
                     <p class="lead text-muted-light">
                         Kaca film bukan hanya soal gaya atau membuat mobil terlihat lebih gelap. Ini adalah investasi vital
@@ -33,27 +33,34 @@
                         99.9% terhadap sinar UV yang berbahaya, serta berbagai tingkat kegelapan (VLT) untuk menyesuaikan
                         kebutuhan privasi Anda tanpa mengorbankan visibilitas di malam hari.
                     </p>
-                    <a href="#daftar-produk" class="btn btn-warning mt-3">Lihat Pilihan Produk</a>
                 </div>
                 <div class="col-lg-5 text-center d-none d-lg-block">
                     <div class="icon-wrapper">
-                        <!-- Ikon besar yang relevan -->
-                        <i class="fas fa-car"></i>
+                        <img src="{{ asset('images/window-car.png') }}" alt="Icon Kaca Film Mobil"
+                            class="img-fluid">
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="daftar-produk py-5" id="daftar-produk">
+    <section class="daftar-produk py-5">
         <div class="container py-4">
-            <h3 class="text-center mb-5">Pilihan Produk Kaca Film Mobil</h3>
+            <div class="section-title">
+                <h2>Pilihan Produk Kaca Film Mobil</h2>
+                <p>
+                    Berikut adalah beberapa produk kaca film mobil unggulan yang kami tawarkan. Setiap produk dirancang
+                    untuk
+                    memberikan performa terbaik dalam menolak panas, melindungi dari sinar UV, dan meningkatkan kenyamanan
+                    berkendara Anda.
+                </p>
+            </div>
 
             <div class="row">
                 <!-- Produk 1 -->
-                <div class="col-lg-4 col-md-6 mb-4">
+                <div class="col-lg-3 col-md-6 mb-4">
                     <div class="card product-card h-100">
-                        <img src="https://placehold.co/600x400/ffffff/111111?text=3M+Logo" class="card-img-top"
+                        <img src="{{ asset('images/brand/3m.png') }}" class="card-img-top"
                             alt="Logo 3M Crystalline">
                         <div class="card-body d-flex flex-column">
                             <h5 class="card-title">3M Crystalline Series</h5>
@@ -67,15 +74,15 @@
                                 <li><i class="fas fa-thermometer-half fa-fw"></i> <strong>TSER (Tolak Panas):</strong>
                                     Hingga 62%</li>
                             </ul>
-                            <a href="#" class="btn btn-danger mt-auto">Lihat Detail</a>
+                            <a href="#" class="btn btn-merah mt-auto">Lihat Detail</a>
                         </div>
                     </div>
                 </div>
 
                 <!-- Produk 2 -->
-                <div class="col-lg-4 col-md-6 mb-4">
+                <div class="col-lg-3 col-md-6 mb-4">
                     <div class="card product-card h-100">
-                        <img src="https://placehold.co/600x400/ffffff/111111?text=V-Kool+Logo" class="card-img-top"
+                        <img src="{{ asset('images/brand/ice.png') }}" class="card-img-top"
                             alt="Logo V-Kool Solitaire">
                         <div class="card-body d-flex flex-column">
                             <h5 class="card-title">V-Kool Solitaire</h5>
@@ -89,15 +96,15 @@
                                 <li><i class="fas fa-thermometer-half fa-fw"></i> <strong>TSER (Tolak Panas):</strong>
                                     Hingga 70%</li>
                             </ul>
-                            <a href="#" class="btn btn-danger mt-auto">Lihat Detail</a>
+                            <a href="#" class="btn btn-merah mt-auto">Lihat Detail</a>
                         </div>
                     </div>
                 </div>
 
                 <!-- Produk 3 -->
-                <div class="col-lg-4 col-md-6 mb-4">
+                <div class="col-lg-3 col-md-6 mb-4">
                     <div class="card product-card h-100">
-                        <img src="https://placehold.co/600x400/ffffff/111111?text=Spectrum+Logo" class="card-img-top"
+                        <img src="{{ asset('images/brand/ilumi.png') }}" class="card-img-top"
                             alt="Logo Spectrum Black">
                         <div class="card-body d-flex flex-column">
                             <h5 class="card-title">Spectrum Black IR</h5>
@@ -111,7 +118,7 @@
                                 <li><i class="fas fa-thermometer-half fa-fw"></i> <strong>TSER (Tolak Panas):</strong>
                                     Hingga 55%</li>
                             </ul>
-                            <a href="#" class="btn btn-danger mt-auto">Lihat Detail</a>
+                            <a href="#" class="btn btn-merah mt-auto">Lihat Detail</a>
                         </div>
                     </div>
                 </div>
@@ -123,16 +130,13 @@
         <div class="container text-center">
             <div class="row justify-content-center">
                 <div class="col-md-9">
-                    <h2 class="display-4 font-weight-bold">Bingung Memilih Produk?</h2>
-                    <p class="lead my-4">
-                        Konsultan kami siap membantu Anda menemukan kaca film yang paling sesuai dengan kebutuhan, tipe
-                        mobil, dan anggaran Anda.
-                    </p>
-                    <!-- Tombol Kuning kontras di atas background merah -->
-                    <a href="https://api.whatsapp.com/send?phone=628123456789&text=Halo%20Mantra%20Sakti%2C%20saya%20butuh%20konsultasi%20kaca%20film."
-                        class="btn btn-warning btn-lg" target="_blank">
-                        <i class="fab fa-whatsapp"></i> Konsultasi Gratis Sekarang
-                    </a>
+                    <div class="section-title">
+                        <h2 class="font-weight-bold">Bingung Memilih Produk ?</h2>
+                        <p class="mt-4">
+                            Konsultan kami siap membantu Anda menemukan kaca film yang paling sesuai dengan kebutuhan, tipe
+                            mobil, dan anggaran Anda.
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>

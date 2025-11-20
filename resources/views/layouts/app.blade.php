@@ -38,15 +38,8 @@
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ URL::to('/') }}">Home</a>
                             </li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownProduk"
-                                    role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Produk Kami
-                                </a>
-                                <div class="dropdown-menu" aria-labelledby="navbarDropdownProduk">
-                                    <a class="dropdown-item" href="{{ URL::to('kategori-produk') }}">Kaca Film Mobil</a>
-                                    <a class="dropdown-item" href="{{ URL::to('detail-produk') }}">Kaca Film Gedung</a>
-                                </div>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ URL::to('produk') }}">Produk</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ URL::to('galeri') }}">Galeri</a>
@@ -79,7 +72,8 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-4 col-md-6 mb-4">
-                        <img class="mb-2" src="{{ asset('images/logo.png') }}" alt="Mantra Sakti Autofilm" height="50">
+                        <img class="mb-2" src="{{ asset('images/logo.png') }}" alt="Mantra Sakti Autofilm"
+                            height="50">
                         <p>Pusat distributor dan spesialis pemasangan kaca film premium untuk otomotif dan gedung.
                             Kualitas, orisinalitas, dan garansi adalah prioritas kami.</p>
                     </div>
@@ -92,7 +86,7 @@
                             <li><a href="{{ URL::to('contact') }}">Kontak</a></li>
                             <li><a href="{{ URL::to('outlet') }}">Outlet</a></li>
                             <li><a href="{{ URL::to('partner') }}">Partner</a></li>
-                            <li><a href="{{ URL::to('dashboard') }}">Administrator</a></li>
+                            <li><a href="{{ URL::to('admin/dashboard') }}">Administrator</a></li>
                         </ul>
                     </div>
                     <div class="col-lg-3 col-md-6 mb-4">
@@ -111,9 +105,13 @@
                         <h5>Ikuti Kami</h5>
                         <p>Dapatkan info terbaru dan promo menarik.</p>
                         <div class="social-icons">
-                            <a target="_blank" href="https://www.facebook.com/mantra.sakti.autofilm.antapani/"><i class="fab fa-facebook-f"></i></a>
-                            <a target="_blank" href="https://www.instagram.com/mantrasaktiautofilm?igshid=ZmVmZTY5ZGE"><i class="fab fa-instagram"></i></a>
-                            <a target="_blank" href="https://www.youtube.com/@mantrasaktiautofilm4841"><i class="fab fa-youtube"></i></a>
+                            <a target="_blank" href="https://www.facebook.com/mantra.sakti.autofilm.antapani/"><i
+                                    class="fab fa-facebook-f"></i></a>
+                            <a target="_blank"
+                                href="https://www.instagram.com/mantrasaktiautofilm?igshid=ZmVmZTY5ZGE"><i
+                                    class="fab fa-instagram"></i></a>
+                            <a target="_blank" href="https://www.youtube.com/@mantrasaktiautofilm4841"><i
+                                    class="fab fa-youtube"></i></a>
                         </div>
                     </div>
                 </div>
@@ -124,26 +122,20 @@
         </footer>
 
         <div class="wa-bubble-wrapper">
-            <!-- Div menu yang awalnya tersembunyi -->
             <div id="wa-menu">
-                <!-- Ganti 62... dengan nomor WA yang sesuai -->
-                <a href="https://wa.me/6281234567001" target="_blank">
-                    <i class="fas fa-car"></i> Admin 1 (Mobil)
+                <a href="https://wa.me/6281244000805" target="_blank">
+                    <i class="fas fa-map-pin"></i> Outlet Bandung
                 </a>
-                <a href="https://wa.me/6281234567002" target="_blank">
-                    <i class="fas fa-building"></i> Admin 2 (Gedung)
+                <a href="https://wa.me/6281323230805" target="_blank">
+                    <i class="fas fa-map-pin"></i> Outlet Bekasi
                 </a>
-                <a href="https://wa.me/6281234567003" target="_blank">
-                    <i class="fas fa-map-pin"></i> Outlet Jakarta
+                <a href="https://wa.me/082110002805" target="_blank">
+                    <i class="fas fa-map-pin"></i> Outlet Tangerang
                 </a>
-                <a href="https://wa.me/6281234567004" target="_blank">
-                    <i class="fas fa-map-pin"></i> Outlet Surabaya
-                </a>
-                <a href="https://wa.me/6281234567005" target="_blank">
-                    <i class="fas fa-exclamation-circle"></i> Layanan Komplain
+                <a href="https://wa.me/081211009805" target="_blank">
+                    <i class="fas fa-map-pin"></i> Outlet Cibubur
                 </a>
             </div>
-            <!-- Bubble utama untuk toggle -->
             <div id="wa-toggle">
                 <i class="fab fa-whatsapp"></i>
             </div>
@@ -181,6 +173,13 @@
 
         $('#wa-toggle').on('click', function() {
             $('#wa-menu').slideToggle(300);
+        });
+        $(document).on('click', function(event) {
+            if (!$(event.target).closest('.wa-bubble-wrapper').length) {
+                if ($('#wa-menu').is(':visible')) {
+                    $('#wa-menu').slideUp(300);
+                }
+            }
         });
     </script>
     @stack('scripts')

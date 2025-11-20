@@ -27,9 +27,15 @@ class HomeController extends Controller
         return view('contact');
     }
 
-    public function detail_produk()
+    public function produk()
     {
-        return view('detail-produk');
+        return view('produk');
+    }
+
+    public function detail_produk($name)
+    {
+        $name = str_replace('-', ' ', $name);
+        return view('detail-produk', ['name' => $name]);
     }
 
     public function kategori_produk()

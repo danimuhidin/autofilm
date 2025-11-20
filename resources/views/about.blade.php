@@ -4,34 +4,27 @@
 @section('page-title', 'Dashboard')
 
 @section('content')
-    <header class="hero-short">
-        <div class="overlay"></div>
-        <!-- Konten di tengah -->
-        <div class="container h-100 d-flex flex-column justify-content-center align-items-center text-center"
-            style="position: relative; z-index: 2; min-height: 30vh;">
+
+    <section class="page-hero container-fluid" style="background-image: url({{ asset('images/hero/tentang.png') }});">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
             <h1 class="display-4 font-weight-bold">Tentang Mantra Sakti Autofilm</h1>
-            <!-- Breadcrumb -->
             <nav aria-label="breadcrumb">
-                <ol class="breadcrumb breadcrumb-custom">
-                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="{{ URL::to('/') }}">Home</a></li>
                     <li class="breadcrumb-item active" aria-current="page">Tentang Kami</li>
                 </ol>
             </nav>
         </div>
-    </header>
+    </section>
 
     <section class="section-padding">
         <div class="container">
             <div class="row align-items-center">
-                <!-- Kolom Kiri: Gambar -->
-                <div class="col-lg-6 mb-4 mb-lg-0">
-                    <img src="https://placehold.co/600x450/444/666?text=Workshop+Profesional"
-                        alt="Workshop Mantra Sakti Autofilm" class="img-fluid rounded shadow-lg">
-                </div>
-                <!-- Kolom Kanan: Teks -->
+                
                 <div class="col-lg-6">
-                    <h2 class="font-weight-bold mb-3">Distributor Resmi Kaca Film Terbaik di Indonesia</h2>
-                    <p class="lead" style="color: #ccc;">Mantra Sakti Autofilm bukan sekadar bengkel biasa. Kami adalah
+                    <h4 class="mb-3" style="color: var(--warna-kuning-aksen);">Distributor Resmi Kaca Film Terbaik di Indonesia</h4>
+                    <p>Mantra Sakti Autofilm bukan sekadar bengkel biasa. Kami adalah
                         distributor resmi dan pusat instalasi kaca film premium terpercaya di Indonesia.</p>
                     <p>Didirikan atas kecintaan terhadap dunia otomotif dan kebutuhan akan perlindungan berkualitas, kami
                         mendedikasikan diri untuk menyediakan produk kaca film 100% original dengan standar pemasangan
@@ -41,11 +34,15 @@
                         hanya bermitra dengan merek-merek ternama dunia dan memastikan setiap teknisi kami terlatih secara
                         profesional dan bersertifikat.</p>
                 </div>
+                <div class="col-lg-6 mb-4 mb-lg-0 pl-lg-4">
+                    <img src="{{ asset('images/hq.jpg') }}" alt="Workshop Mantra Sakti Autofilm"
+                        class="img-fluid rounded shadow-lg">
+                </div>
             </div>
         </div>
     </section>
 
-    <section class="section-padding section-bg-dark">
+    <section class="section-padding" style="background-color: var(--warna-latar-sekunder);">
         <div class="container">
             <div class="row">
                 <!-- Kolom Kiri: Visi -->
@@ -120,7 +117,7 @@
         </div>
     </section>
 
-    <section class="section-padding section-bg-dark">
+    {{-- <section class="section-padding section-bg-dark">
         <div class="container">
             <div class="row text-center mb-5">
                 <div class="col-12">
@@ -170,5 +167,5 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> --}}
 @endsection

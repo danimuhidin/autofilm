@@ -4,14 +4,15 @@
 @section('page-title', 'Dashboard')
 
 @section('content')
-    <section class="py-3" style="background-color: #1f1f1f;">
-        <div class="container">
+    <section class="page-hero container-fluid" style="background-image: url({{ asset('images/hero/kategori.png') }});">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1 class="display-4 font-weight-bold">Produk Kaca Film</h1>
             <nav aria-label="breadcrumb">
-                <ol class="breadcrumb breadcrumb-dark">
-                    <li class="breadcrumb-item"><a href="#">Home</a></li>
-                    <li class="breadcrumb-item"><a href="#">Produk Kami</a></li>
-                    <li class="breadcrumb-item"><a href="#">Kaca Film Mobil</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">3M Crystalline Series</li>
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="{{ url('/') }}">Home</a></li>
+                    <li class="breadcrumb-item"><a href="{{ url('produk') }}">Produk</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">{{ $name }}</li>
                 </ol>
             </nav>
         </div>
@@ -20,75 +21,77 @@
     <section class="py-5">
         <div class="container">
             <div class="row">
-                <!-- Kolom Kiri (Galeri Produk) -->
-                <div class="col-lg-6 mb-4 mb-lg-0">
-                    <!-- Gambar Utama -->
-                    <img src="https://placehold.co/600x450/333/FFF?text=3M+Crystalline" id="mainProductImage"
-                        class="img-fluid rounded shadow-lg" alt="3M Crystalline Series">
+                <div class="col-lg-5 mb-4 mb-lg-0">
+                    <figure class="w-100">
+                        <img src="{{ asset('images/produk/p1.png') }}" id="mainProductImage"
+                            class="w-100 rounded shadow-lg" alt="3M Crystalline Series">
+                    </figure>
 
-                    <!-- Thumbnails -->
                     <div class="d-flex mt-3">
-                        <img src="https://placehold.co/150x112/555/FFF?text=Logo+3M"
-                            data-large-src="https://placehold.co/600x450/333/FFF?text=3M+Crystalline"
+                        <img src="{{ asset('images/produk/p1.png') }}"
+                            data-large-src="{{ asset('images/produk/p1.png') }}"
                             class="product-thumbnail mr-2 active" alt="Logo 3M">
-                        <img src="https://placehold.co/150x112/555/FFF?text=Mobil+Terpasang"
-                            data-large-src="https://placehold.co/600x450/333/FFF?text=Contoh+Terpasang"
+                        <img src="{{ asset('images/produk/p2.png') }}"
+                            data-large-src="{{ asset('images/produk/p2.png') }}"
                             class="product-thumbnail mr-2" alt="Contoh Terpasang">
-                        <img src="https://placehold.co/150x112/555/FFF?text=Demo+Kegelapan"
-                            data-large-src="https://placehold.co/600x450/333/FFF?text=Swatch+Kegelapan"
+                        <img src="{{ asset('images/produk/p3.png') }}"
+                            data-large-src="{{ asset('images/produk/p3.png') }}"
                             class="product-thumbnail mr-2" alt="Demo Kegelapan">
-                        <img src="https://placehold.co/150x112/555/FFF?text=Fitur+Tolak+Panas"
-                            data-large-src="https://placehold.co/600x450/333/FFF?text=Fitur+Produk"
+                        <img src="{{ asset('images/produk/p4.png') }}"
+                            data-large-src="{{ asset('images/produk/p4.png') }}"
+                            class="product-thumbnail mr-2" alt="Fitur Tolak Panas">
+                        <img src="{{ asset('images/produk/p5.png') }}"
+                            data-large-src="{{ asset('images/produk/p5.png') }}"
                             class="product-thumbnail" alt="Fitur Tolak Panas">
                     </div>
                 </div>
 
-                <!-- Kolom Kanan (Info Utama) -->
-                <div class="col-lg-6">
-                    <h1 class="font-weight-bold mb-3">3M Crystalline Series</h1>
-                    <p class="lead text-white-50 mb-4">
-                        Rasakan pengalaman berkendara premium dengan 3M Crystalline Series. Teknologi multilayer optical
-                        film
-                        eksklusif yang menolak panas lebih baik daripada kaca film gelap biasa tanpa mengubah tampilan mobil
-                        Anda.
+                <div class="col-lg-7 pl-4">
+                    <h2 class="font-weight-bold mb-2">{{ $name }}</h2>
+                    <p class="mb-2">
+                        Rasakan pengalaman berkendara premium dengan {{ $name }}. Teknologi multilayer optical
+                        film eksklusif yang menolak panas lebih baik daripada kaca film gelap biasa tanpa mengubah tampilan
+                        mobil Anda.
                     </p>
 
-                    <!-- Spesifikasi Kunci -->
-                    <ul class="list-unstyled text-white my-4" style="font-size: 1.1rem;">
-                        <li class="mb-2">
-                            <i class="fas fa-sun text-yellow mr-2" style="width: 20px;"></i>
+                    <ul class="list-unstyled text-white my-3" style="font-size: .9rem;">
+                        <li class="mb-1">
+                            <i class="fas fa-sun text-yellow mr-2"></i>
                             <strong>VLT (Kegelapan):</strong> 20%, 40%, 60%, 70%
                         </li>
-                        <li class="mb-2">
-                            <i class="fas fa-shield-alt text-yellow mr-2" style="width: 20px;"></i>
+                        <li class="mb-1">
+                            <i class="fas fa-shield-alt text-yellow mr-2"></i>
                             <strong>UV Rejection:</strong> 99.9% (SPF 1000+)
                         </li>
-                        <li class="mb-2">
-                            <i class="fas fa-thermometer-half text-yellow mr-2" style="width: 20px;"></i>
+                        <li class="mb-1">
+                            <i class="fas fa-thermometer-half text-yellow mr-2"></i>
                             <strong>TSER (Tolak Panas):</strong> Hingga 62%
                         </li>
-                        <li class="mb-2">
-                            <i class="fas fa-satellite-dish text-yellow mr-2" style="width: 20px;"></i>
+                        <li class="mb-1">
+                            <i class="fas fa-satellite-dish text-yellow mr-2"></i>
                             <strong>No Signal Interference:</strong> Aman untuk GPS & Sinyal HP
                         </li>
-                        <li class="mb-2">
-                            <i class="fas fa-star text-yellow mr-2" style="width: 20px;"></i>
+                        <li class="mb-1">
+                            <i class="fas fa-star text-yellow mr-2"></i>
                             <strong>Garansi Resmi:</strong> 5 Tahun E-Warranty
+                        </li>
+                        <li class="mb-1">
+                            <i class="fas fa-thumbs-up text-yellow mr-2"></i>
+                            <strong>Non-Metalized:</strong> Tidak Korosi & Tidak Berubah Warna 
+                        </li>
+                        <li class="mb-1">
+                            <i class="fas fa-leaf text-yellow mr-2"></i>
+                            <strong>Ramah Lingkungan:</strong> Bebas Logam Berat & Ramah Lingkungan
                         </li>
                     </ul>
 
-                    <!-- Harga -->
-                    <h2 class="text-red font-weight-bold my-4">Harga: Hubungi Kami</h2>
-                    <p class="text-white-50">Harga bervariasi tergantung ukuran mobil (Small, Medium, Large) dan paket
-                        pemasangan (Full, SKKB).</p>
-
-                    <!-- Tombol CTA -->
-                    <div class="mt-4">
+                    <p class="text-white-50 mt-2">
+                        Harga bervariasi tergantung ukuran mobil (Small, Medium, Large) dan paket
+                        pemasangan (Full, SKKB).
+                    </p>
+                    <div class="mt-2">
                         <a href="#" class="btn btn-merah btn-lg mr-2 mb-2 shadow">
-                            <i class="fas fa-calendar-alt mr-2"></i>Pesan Pemasangan
-                        </a>
-                        <a href="#" class="btn btn-outline-merah btn-lg mb-2">
-                            <i class="fab fa-whatsapp mr-2"></i>Tanya Admin (WA)
+                            <i class="fas fa-calendar-alt mr-2"></i>Harga: Hubungi Kami
                         </a>
                     </div>
                 </div>
@@ -100,29 +103,29 @@
         <div class="container">
             <div class="row">
                 <div class="col-12">
-                    <!-- Navigasi Tabs -->
                     <ul class="nav nav-tabs" id="productTabs" role="tablist">
                         <li class="nav-item" role="presentation">
-                            <a class="nav-link active" id="deskripsi-tab" data-toggle="tab" href="#deskripsi" role="tab"
-                                aria-controls="deskripsi" aria-selected="true">Deskripsi Lengkap</a>
+                            <a class="nav-link active" id="deskripsi-tab" data-toggle="tab" href="javascript:void(0);"
+                                data-target="#deskripsi" role="tab" aria-controls="deskripsi"
+                                aria-selected="true">Deskripsi Lengkap</a>
                         </li>
                         <li class="nav-item" role="presentation">
-                            <a class="nav-link" id="spesifikasi-tab" data-toggle="tab" href="#spesifikasi" role="tab"
-                                aria-controls="spesifikasi" aria-selected="false">Spesifikasi Teknis</a>
+                            <a class="nav-link" id="spesifikasi-tab" data-toggle="tab" href="javascript:void(0);"
+                                data-target="#spesifikasi" role="tab" aria-controls="spesifikasi"
+                                aria-selected="false">Spesifikasi Teknis</a>
                         </li>
                         <li class="nav-item" role="presentation">
-                            <a class="nav-link" id="garansi-tab" data-toggle="tab" href="#garansi" role="tab"
-                                aria-controls="garansi" aria-selected="false">Garansi & Perawatan</a>
+                            <a class="nav-link" id="garansi-tab" data-toggle="tab" href="javascript:void(0);"
+                                data-target="#garansi" role="tab" aria-controls="garansi" aria-selected="false">Garansi
+                                & Perawatan</a>
                         </li>
                     </ul>
 
-                    <!-- Konten Tabs -->
                     <div class="tab-content" id="productTabsContent">
-                        <!-- Tab 1: Deskripsi Lengkap -->
                         <div class="tab-pane fade show active" id="deskripsi" role="tabpanel"
                             aria-labelledby="deskripsi-tab">
                             <h4 class="text-yellow">Teknologi Superior, Kenyamanan Maksimal</h4>
-                            <p>3M Crystalline Series adalah puncak inovasi kaca film non-metalized. Dibuat menggunakan
+                            <p>{{ $name }} adalah puncak inovasi kaca film non-metalized. Dibuat menggunakan
                                 teknologi
                                 multilayer optical film (MOF) yang dipatenkan, kaca film ini terdiri dari lebih dari 200
                                 lapisan
@@ -152,9 +155,8 @@
                             </ul>
                         </div>
 
-                        <!-- Tab 2: Spesifikasi Teknis -->
                         <div class="tab-pane fade" id="spesifikasi" role="tabpanel" aria-labelledby="spesifikasi-tab">
-                            <p>Berikut adalah perbandingan data teknis untuk berbagai tipe dalam 3M Crystalline Series:</p>
+                            <p>Berikut adalah perbandingan data teknis untuk berbagai tipe dalam {{ $name }}:</p>
                             <div class="table-responsive">
                                 <table class="table table-dark table-striped table-bordered mt-3">
                                     <thead>
@@ -203,16 +205,15 @@
                                     </tbody>
                                 </table>
                             </div>
-                            <small class="text-white-50">*Data teknis berdasarkan pengujian standar industri pada kaca
-                                clear 6mm.</small>
+                            <small class="text-white-50">
+                                *Data teknis berdasarkan pengujian standar industri pada kaca clear 6mm.
+                            </small>
                         </div>
 
-                        <!-- Tab 3: Garansi & Perawatan -->
                         <div class="tab-pane fade" id="garansi" role="tabpanel" aria-labelledby="garansi-tab">
-                            <h4 class="text-yellow">Garansi Resmi 3M Indonesia 5 Tahun</h4>
-                            <p>Setiap pemasangan 3M Crystalline Series di Mantra Sakti Autofilm dilindungi oleh garansi
-                                resmi
-                                (E-Warranty) dari 3M Indonesia selama 5 tahun. Garansi ini mencakup:</p>
+                            <h4 class="text-yellow">Garansi Resmi 5 Tahun</h4>
+                            <p>Setiap pemasangan {{ $name }} di Mantra Sakti Autofilm dilindungi oleh garansi
+                                resmi (E-Warranty) selama 5 tahun. Garansi ini mencakup:</p>
                             <ul class="text-white-50">
                                 <li>Perubahan warna (menjadi ungu atau pudar).</li>
                                 <li>Gelembung (blistering) atau delaminasi.</li>
@@ -242,66 +243,132 @@
             <h2 class="text-center text-white mb-4">Produk Lainnya yang Mungkin Anda Suka</h2>
             <div class="owl-carousel owl-theme" id="produkTerkaitCarousel">
 
-                <!-- Item 1 -->
                 <div class="item">
                     <div class="card product-card text-white h-100">
-                        <img src="https://placehold.co/300x200/444/FFF?text=3M+Black+Beauty" class="card-img-top"
-                            alt="3M Black Beauty">
+                        <img src="{{ asset('images/brand/3m.png') }}" class="card-img-top" alt="3M Autofilm">
                         <div class="card-body d-flex flex-column">
-                            <h5 class="card-title">3M Black Beauty</h5>
-                            <p class="card-text text-white-50 small">Tampilan hitam pekat yang elegan dengan performa tolak
-                                panas
-                                stabil.</p>
-                            <a href="#" class="btn btn-outline-merah btn-sm mt-auto">Lihat Detail</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Item 2 -->
-                <div class="item">
-                    <div class="card product-card text-white h-100">
-                        <img src="https://placehold.co/300x200/444/FFF?text=Iceberg+Window+Film" class="card-img-top"
-                            alt="Iceberg Window Film">
-                        <div class="card-body d-flex flex-column">
-                            <h5 class="card-title">Iceberg Window Film (UX Series)</h5>
-                            <p class="card-text text-white-50 small">Kaca film premium dengan teknologi 'Clear View' dan
-                                tolak panas
-                                maksimal.</p>
-                            <a href="#" class="btn btn-outline-merah btn-sm mt-auto">Lihat Detail</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Item 3 -->
-                <div class="item">
-                    <div class="card product-card text-white h-100">
-                        <img src="https://placehold.co/300x200/444/FFF?text=Nexgard+Premium" class="card-img-top"
-                            alt="Nexgard Premium">
-                        <div class="card-body d-flex flex-column">
-                            <h5 class="card-title">Nexgard Premium (Carbon)</h5>
-                            <p class="card-text text-white-50 small">Performa tinggi dari Korea dengan harga yang sangat
-                                kompetitif.
+                            <h5 class="card-title">3M Autofilm</h5>
+                            <p class="card-text text-white-50 small">
+                                Pelopor, menawarkan perlindungan panas & privasi superior dengan teknologi non-metalik
+                                canggih.
                             </p>
-                            <a href="#" class="btn btn-outline-merah btn-sm mt-auto">Lihat Detail</a>
+                            <a href="{{ URL::to('detail-produk/3m-autofilm') }}"
+                                class="btn btn-merah mt-2">Lihat Detail</a>
                         </div>
                     </div>
                 </div>
-
-                <!-- Item 4 (Opsional) -->
                 <div class="item">
                     <div class="card product-card text-white h-100">
-                        <img src="https://placehold.co/300x200/444/FFF?text=Paket+Coating" class="card-img-top"
-                            alt="Paket Coating">
+                        <img src="{{ asset('images/brand/ice.png') }}" class="card-img-top" alt="Iceview">
                         <div class="card-body d-flex flex-column">
-                            <h5 class="card-title">Nano Ceramic Coating</h5>
-                            <p class="card-text text-white-50 small">Lindungi cat mobil Anda dengan lapisan proteksi
-                                premium 9H.
+                            <h5 class="card-title">Iceview</h5>
+                            <p class="card-text text-white-50 small">
+                                Kaca film berkualitas tinggi, fokus pada penolakan panas maksimal dan kejernihan pandangan
+                                yang optimal.
                             </p>
-                            <a href="#" class="btn btn-outline-merah btn-sm mt-auto">Lihat Detail</a>
+                            <a href="{{ URL::to('detail-produk/iceview') }}"
+                                class="btn btn-merah mt-2">Lihat Detail</a>
                         </div>
                     </div>
                 </div>
-
+                <div class="item">
+                    <div class="card product-card text-white h-100">
+                        <img src="{{ asset('images/brand/ilumi.png') }}" class="card-img-top" alt="Ilumi Window Film">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">Ilumi Window Film</h5>
+                            <p class="card-text text-white-50 small">
+                                Menawarkan perlindungan UV yang baik dengan harga kompetitif, pilihan seimbang antara
+                                performa dan biaya.
+                            </p>
+                            <a href="{{ URL::to('detail-produk/ilumi-window-film') }}"
+                                class="btn btn-merah mt-2">Lihat Detail</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="card product-card text-white h-100">
+                        <img src="{{ asset('images/brand/llumar.png') }}" class="card-img-top" alt="Llumar">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">Llumar</h5>
+                            <p class="card-text text-white-50 small">
+                                Kaca film global teruji, dikenal karena daya tahan, kejernihan optik, dan tolak panas yang
+                                konsisten.
+                            </p>
+                            <a href="{{ URL::to('detail-produk/llumar') }}"
+                                class="btn btn-merah mt-2">Lihat Detail</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="card product-card text-white h-100">
+                        <img src="{{ asset('images/brand/n1.png') }}" class="card-img-top" alt="N1 Window Film">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">N1 Window Film</h5>
+                            <p class="card-text text-white-50 small">
+                                Pilihan ekonomis dengan performa dasar yang memadai, menolak panas harian dan memberikan
+                                privasi.
+                            </p>
+                            <a href="{{ URL::to('detail-produk/n1-window-film') }}"
+                                class="btn btn-merah mt-2">Lihat Detail</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="card product-card text-white h-100">
+                        <img src="{{ asset('images/brand/perfect.png') }}" class="card-img-top" alt="Perfections">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">Perfections</h5>
+                            <p class="card-text text-white-50 small">
+                                Menyediakan kaca film yang menggabungkan estetika premium dengan kemampuan tolak panas
+                                tinggi.
+                            </p>
+                            <a href="{{ URL::to('detail-produk/perfections') }}"
+                                class="btn btn-merah mt-2">Lihat Detail</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="card product-card text-white h-100">
+                        <img src="{{ asset('images/brand/solar.png') }}" class="card-img-top" alt="Solar Gard Premium">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">Solar Gard Premium</h5>
+                            <p class="card-text text-white-50 small">
+                                Merek terkemuka, menawarkan rangkaian lengkap solusi tolak panas, keamanan, dan perlindungan
+                                interior.
+                            </p>
+                            <a href="{{ URL::to('detail-produk/solar-gard-premium') }}"
+                                class="btn btn-merah mt-2">Lihat Detail</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="card product-card text-white h-100">
+                        <img src="{{ asset('images/brand/una.png') }}" class="card-img-top" alt="Una Gard">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">Una Gard</h5>
+                            <p class="card-text text-white-50 small">
+                                Kaca film nano-keramik modern yang fokus pada tolak panas tanpa mengganggu sinyal
+                                elektronik.
+                            </p>
+                            <a href="{{ URL::to('detail-produk/una-gard') }}"
+                                class="btn btn-merah mt-2">Lihat Detail</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="card product-card text-white h-100">
+                        <img src="{{ asset('images/brand/vkool.png') }}" class="card-img-top" alt="V-Kool">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">V-Kool</h5>
+                            <p class="card-text text-white-50 small">
+                                Pelopor kaca film spektral selektif, terkenal akan tolak panas tinggi dengan transmisi
+                                cahaya tampak yang jernih.
+                            </p>
+                            <a href="{{ URL::to('detail-produk/vkool') }}"
+                                class="btn btn-merah mt-2">Lihat Detail</a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -310,6 +377,12 @@
 @push('scripts')
     <script>
         $(document).ready(function() {
+
+            // 0. Script untuk Tab Navigation (mencegah scroll)
+            $('#productTabs a[data-toggle="tab"]').on('click', function(e) {
+                e.preventDefault();
+                $(this).tab('show');
+            });
 
             // 1. Script untuk Galeri Produk
             $('.product-thumbnail').on('click', function() {

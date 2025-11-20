@@ -13,11 +13,13 @@ Route::get('/kategori-produk', function () {
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/about', [HomeController::class, 'about'])->name('about');
 Route::get('/contact', [HomeController::class, 'contact'])->name('contact');
-Route::get('/detail-produk', [HomeController::class, 'detail_produk'])->name('detail-produk');
-Route::get('/kategori-produk', [HomeController::class, 'kategori_produk'])->name('kategori-produk');
 Route::get('/galeri', [HomeController::class, 'galeri'])->name('galeri');
 Route::get('/outlet', [HomeController::class, 'outlet'])->name('outlet');
 Route::get('/partner', [HomeController::class, 'partner'])->name('partner');
+Route::get('/produk', [HomeController::class, 'produk'])->name('produk');
+// Route::get('/detail-produk', [HomeController::class, 'detail_produk'])->name('detail-produk');
+Route::get('/detail-produk/{name}', [HomeController::class, 'detail_produk'])->name('detail-produk');
+Route::get('/kategori-produk', [HomeController::class, 'kategori_produk'])->name('kategori-produk');
 
 Auth::routes();
 Route::middleware(['auth', 'admin'])->prefix('admin')->group(function () {

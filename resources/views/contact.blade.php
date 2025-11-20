@@ -5,24 +5,20 @@
 
 @section('content')
 
-    <section class="hero-short container-fluid p-0">
+    <section class="page-hero container-fluid" style="background-image: url({{ asset('images/hero/garage.png') }});">
         <div class="hero-overlay"></div>
-        <div class="container h-100">
-            <div class="row h-100 align-items-center justify-content-center text-center">
-                <div class="col-12 hero-content">
-                    <h1 class="display-4">Kontak & Jaringan Outlet Kami</h1>
-                    <nav aria-label="breadcrumb">
-                        <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">Hubungi Kami</li>
-                        </ol>
-                    </nav>
-                </div>
-            </div>
+        <div class="hero-content">
+            <h1 class="display-4 font-weight-bold">Hubungi Mantra Sakti Autofilm</h1>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="{{ URL::to('/') }}">Home</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Kontak</li>
+                </ol>
+            </nav>
         </div>
     </section>
 
-    <section class="contact-hq">
+    <section class="contact-hq py-5">
         <div class="container">
             <h2 class="section-title">Hubungi Kantor Pusat</h2>
             <div class="row">
@@ -59,7 +55,7 @@
                             <label for="formPesan">Pesan Anda</label>
                             <textarea class="form-control" id="formPesan" rows="6" placeholder="Tuliskan pesan Anda di sini..." required></textarea>
                         </div>
-                        <button type="submit" class="btn btn-danger btn-lg px-5">Kirim Pesan</button>
+                        <button type="submit" class="btn btn-merah">Kirim Pesan</button>
                     </form>
                 </div>
 
@@ -71,37 +67,38 @@
                             <i class="fas fa-map-marker-alt"></i>
                             <span>
                                 <strong>Alamat:</strong><br>
-                                Jl. Raya Autofilm No. 123, Blok A5
-                                Jakarta Pusat, DKI Jakarta 10110
+                                Jl. Mekar Puspita No.23, Cibaduyut, Kec. Bojongloa Kidul,
+                                Kota Bandung, Jawa Barat 40236, Bandung, Jawa Barat 40236
                             </span>
                         </li>
                         <li>
                             <i class="fas fa-phone"></i>
                             <span>
                                 <strong>Telepon:</strong><br>
-                                (021) 1234-5678
+                                081244000805
                             </span>
                         </li>
                         <li>
-                            <i class="fas fa-envelope"></i>
+                            <i class="fab fa-instagram"></i>
                             <span>
-                                <strong>Email:</strong><br>
-                                info@mantrasakti-autofilm.com
+                                <strong>Instagram:</strong><br>
+                                @mantrasaktiautofilm
                             </span>
                         </li>
                         <li>
                             <i class="fas fa-clock"></i>
                             <span>
                                 <strong>Jam Operasional:</strong><br>
-                                Senin - Sabtu (08.00 - 17.00 WIB)
+                                Senin - Jumat: 08.00 - 17.00<br>
+                                Sabtu: 08.00 - 14.00<br>
+                                Minggu/Libur: Tutup
                             </span>
                         </li>
                     </ul>
 
                     <div class="map-responsive mt-4">
-                        <!-- Ganti src dengan embed Google Maps lokasi Anda -->
                         <iframe
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.471612053075!2d106.82496417585012!3d-6.20150036072462!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f3e945e34b9d%3A0x5371bf0fd540de!2sMonumen%20Nasional!5e0!3m2!1sid!2sid!4v1678888888888!5m2!1sid!2sid"
+                            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d247.5292365265803!2d107.60129351836224!3d-6.954015962128362!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e68e8ebd164e4f5%3A0x86b84352dc5f73e5!2sJl.%20Mekar%20Pratama%20No.6!5e0!3m2!1sid!2sus!4v1763391977185!5m2!1sid!2sus"
                             width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
                             referrerpolicy="no-referrer-when-downgrade"></iframe>
                     </div>
@@ -110,72 +107,79 @@
         </div>
     </section>
 
-    <section class="outlet-section">
+    <section class="outlet-section py-5">
         <div class="container">
-            <h2 class="section-title">Temukan Outlet Terdekat Kami</h2>
-            <p class="text-center text-secondary col-md-8 mx-auto" style="margin-top: -20px; margin-bottom: 40px;">
+            <h2 class="section-title mb-2">Temukan Outlet Terdekat Kami</h2>
+            <p class="text-center text-secondary col-md-12 mx-auto mb-5">
                 Untuk pemasangan retail dan konsultasi langsung, silakan hubungi jaringan outlet resmi kami di bawah ini.
             </p>
-            <div class="row">
-
-                <!-- Contoh Outlet Card 1 -->
-                <div class="col-md-6 col-lg-4 mb-4">
-                    <div class="card h-100">
-                        <div class="card-header">Jakarta Selatan</div>
-                        <div class="card-body d-flex flex-column">
-                            <h5 class="card-title">Mantra Sakti - Pondok Indah</h5>
-                            <p class="card-text">Jl. Sultan Iskandar Muda No. 20, Arteri Pondok Indah, Jakarta Selatan.</p>
-                            <p class="card-text">
-                                <i class="fab fa-whatsapp" style="color: #25D366;"></i> 0812-1111-2222
-                            </p>
-                            <div class="mt-auto pt-3">
-                                <a href="#" class="btn btn-danger btn-block mb-2">Lihat Google Maps</a>
-                                <a href="#" class="btn btn-outline-danger btn-block">Chat WA Outlet</a>
+            <div id="daftar-outlet">
+                <div class="row">
+                    <div class="col-lg-4 col-md-6 mb-4 h-100">
+                        <div class="card outlet-card h-100">
+                            <div class="card-body">
+                                <h5 class="card-title mb-2" style="color: var(--warna-kuning-aksen);">
+                                    <b>Mantra Sakti - Bekasi</b>
+                                </h5>
+                                <p class="card-text text-white-50">
+                                    Grand Wisata, Ruko AA 15 No.16, Lambangsari, Tambun Selatan, Bekasi Regency, West Java
+                                    17510
+                                </p>
+                                <p class="card-text text-white-50">
+                                    <i class="fas fa-phone-alt"></i> 0813-2323-0805
+                                </p>
+                                <a target="_blank"
+                                    href="https://maps.app.goo.gl/pD8kd49jh9NFmbi17"
+                                    class="btn btn-kuning btn-sm">
+                                    Lihat Google Maps
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 mb-4 h-100">
+                        <div class="card outlet-card h-100">
+                            <div class="card-body">
+                                <h5 class="card-title mb-2" style="color: var(--warna-kuning-aksen);">
+                                    <b>Mantra Sakti - Tangerang</b>
+                                </h5>
+                                <p class="card-text text-white-50">
+                                    Ruko Mendrisio, Jl. Boulevard iL Lago No.68, Cihuni, Kec. Pagedangan, Kabupaten
+                                    Tangerang, Banten 15334
+                                </p>
+                                <p class="card-text text-white-50">
+                                    <i class="fas fa-phone-alt"></i> 0821-1000-2805
+                                </p>
+                                <a target="_blank"
+                                    href="https://maps.app.goo.gl/k2FjnR7xc3t38g7K8"
+                                    class="btn btn-kuning btn-sm">
+                                    Lihat Google Maps
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 mb-4 h-100">
+                        <div class="card outlet-card h-100">
+                            <div class="card-body">
+                                <h5 class="card-title mb-2" style="color: var(--warna-kuning-aksen);">
+                                    <b>Mantra Sakti - Cibubur</b>
+                                </h5>
+                                <p class="card-text text-white-50">
+                                    Jl Alternatif Cibubur, Cibubur Point Automotif Center Ruko Blok B5, Kota Depok, Jawa
+                                    Barat 16454
+                                </p>
+                                <p class="card-text text-white-50">
+                                    <i class="fas fa-phone-alt"></i> 0812-1100-9805
+                                </p>
+                                <a target="_blank"
+                                    href="https://maps.app.goo.gl/23v6Vzd5qYoupWw1A"
+                                    class="btn btn-kuning btn-sm">Lihat Google Maps</a>
                             </div>
                         </div>
                     </div>
                 </div>
-
-                <!-- Contoh Outlet Card 2 -->
-                <div class="col-md-6 col-lg-4 mb-4">
-                    <div class="card h-100">
-                        <div class="card-header">Bekasi</div>
-                        <div class="card-body d-flex flex-column">
-                            <h5 class="card-title">Mantra Sakti - Summarecon Bekasi</h5>
-                            <p class="card-text">Ruko Saphire Commercial, Blok SA-10, Jl. Bulevar Selatan, Summarecon
-                                Bekasi.</p>
-                            <p class="card-text">
-                                <i class="fab fa-whatsapp" style="color: #25D366;"></i> 0812-3333-4444
-                            </p>
-                            <div class="mt-auto pt-3">
-                                <a href="#" class="btn btn-danger btn-block mb-2">Lihat Google Maps</a>
-                                <a href="#" class="btn btn-outline-danger btn-block">Chat WA Outlet</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Contoh Outlet Card 3 -->
-                <div class="col-md-6 col-lg-4 mb-4">
-                    <div class="card h-100">
-                        <div class="card-header">Tangerang</div>
-                        <div class="card-body d-flex flex-column">
-                            <h5 class="card-title">Mantra Sakti - Gading Serpong</h5>
-                            <p class="card-text">Ruko Paramount Center, Blok B No. 15, Gading Serpong, Tangerang.</p>
-                            <p class="card-text">
-                                <i class="fab fa-whatsapp" style="color: #25D366;"></i> 0812-5555-6666
-                            </p>
-                            <div class="mt-auto pt-3">
-                                <a href="#" class="btn btn-danger btn-block mb-2">Lihat Google Maps</a>
-                                <a href="#" class="btn btn-outline-danger btn-block">Chat WA Outlet</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
             </div>
             <div class="text-center mt-4">
-                <a href="semua-outlet.html" class="btn btn-lg btn-outline-warning" style="border-radius: 25px;">Lihat
+                <a href="{{ URL::to('/outlet') }}" class="btn btn-merah">Lihat
                     Semua Jaringan Outlet</a>
             </div>
         </div>
