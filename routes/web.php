@@ -26,6 +26,19 @@ Route::middleware(['auth', 'admin'])->prefix('admin')->group(function () {
 
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('admin.dashboard');
     Route::resource('users', UserController::class)->except(['show']);
+    Route::resource('contacts', \App\Http\Controllers\Admin\ContactController::class)->except(['show', 'create']);
+    Route::resource('partners', \App\Http\Controllers\Admin\PartnerController::class)->except(['show', 'create']);
+    Route::resource('outlets', \App\Http\Controllers\Admin\OutletController::class)->except(['show', 'create']);
+    Route::resource('testimonials', \App\Http\Controllers\Admin\TestimonialController::class)->except(['show', 'create']);
+    Route::resource('galleries', \App\Http\Controllers\Admin\GalleryController::class)->except(['show', 'create']);
+    Route::resource('heroes', \App\Http\Controllers\Admin\HeroController::class)->except(['show', 'create']);
+    Route::resource('jumbotrons', \App\Http\Controllers\Admin\JumbotronController::class)->except(['show', 'create']);
+    Route::resource('youtubes', \App\Http\Controllers\Admin\YoutubeController::class)->except(['show', 'create']);
+    Route::resource('visions', \App\Http\Controllers\Admin\VisionController::class)->except(['show', 'create']);
+    Route::resource('missions', \App\Http\Controllers\Admin\MissionController::class)->except(['show', 'create']);
+    Route::resource('bios', \App\Http\Controllers\Admin\BioController::class)->except(['show', 'create']);
+    Route::resource('posts', \App\Http\Controllers\Admin\PostController::class)->except(['show', 'create']);
+    Route::resource('products', \App\Http\Controllers\Admin\ProductController::class)->except(['show', 'create']);
     // Tambahkan route admin lainnya di sini
     // Contoh: Route::get('/products', [ProductController::class, 'index']);
 

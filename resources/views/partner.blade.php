@@ -22,7 +22,7 @@
         <div class="row">
             <div class="col-md-10 offset-md-1 text-center">
                 <h2 class="mb-4">Komitmen pada Keaslian dan Kemitraan</h2>
-                <p class="lead" style="color: var(--light-gray);">Di Mantra Sakti Autofilm, kami percaya bahwa bisnis yang
+                <p class="lead" style="color: var(--light-gray);">Di {{ $bio->brand_name }}, kami percaya bahwa bisnis yang
                     hebat dibangun di atas kepercayaan. Itulah mengapa kami hanya bermitra dengan brand-brand terbaik dunia
                     dan memastikan setiap produk yang kami distribusikan adalah 100% otentik dan bergaransi resmi.</p>
                 <p>Kami mendedikasikan diri untuk membangun kemitraan jangka panjang yang saling menguntungkan, baik dengan

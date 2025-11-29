@@ -2,6 +2,9 @@
 
 namespace App\Providers;
 
+use App\Models\Bio;
+use App\Models\Contact;
+use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -19,6 +22,10 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        //
+        View::composer('*', function ($view) {
+            $bio = Bio::first();
+            $waBubble = Contact::all();
+            $view->with('bio', $bio)->with('waBubble', $waBubble);
+        });
     }
 }

@@ -1,6 +1,11 @@
-@extends('layouts.app')
+@extends('layouts.admin')
 
 @section('content')
+    <style>
+        .content-wrapper {
+            margin-left: 0 !important;
+        }
+    </style>
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-8">

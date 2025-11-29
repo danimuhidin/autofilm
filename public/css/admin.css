@@ -1,0 +1,36 @@
+[class*=sidebar-dark-] .nav-treeview>.nav-item>.nav-link.active, [class*=sidebar-dark-] .nav-treeview>.nav-item>.nav-link.active:focus, [class*=sidebar-dark-] .nav-treeview>.nav-item>.nav-link.active:hover {
+    background-color: rgba(255, 255, 255, .1) !important;
+    color: #fff !important;
+}
+
+.sidebar-dark-primary .nav-sidebar>.nav-item>.nav-link.active, .sidebar-light-primary .nav-sidebar>.nav-item>.nav-link.active {
+    background-color: rgba(255, 255, 255, .1) !important;
+    color: #fff !important;
+}
+
+.nav-item a i, .nav-item a p {
+    font-size: 14px;
+}
+
+.nav-sidebar .nav-item>.nav-link {
+    padding: 3px 10px;
+}
+
+[class*=sidebar-dark-] .nav-treeview>.nav-item>.nav-link {
+    margin-left: 20px;
+}
+
+table th {
+    vertical-align: middle !important;
+    padding: 3px 10px !important;
+    text-align: center !important;
+}
+
+table td {
+    vertical-align: middle !important;
+    padding: 7px 10px !important;
+}
+
+.card-body>.table>thead>tr>td, .card-body>.table>thead>tr>th {
+    border-top-width: 1px;
+}

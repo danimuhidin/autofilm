@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>@yield('title', 'Mantra Sakti Autofilm')</title>
+    <title>@yield('title', $bio->title)</title>
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
     <link rel="stylesheet" href="{{ asset('vendor/plugins/fontawesome-free/css/all.min.css') }}">
@@ -25,8 +25,7 @@
             <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNavbar">
                 <div class="container">
                     <a class="navbar-brand" href="{{ URL::to('/') }}">
-                        {{-- img  --}}
-                        <img src="{{ asset('images/logo.png') }}" alt="Mantra Sakti Autofilm" height="40">
+                        <img src="{{ asset('storage/' . $bio->brand_img) }}" alt="{{ $bio->brand_name }}" height="40">
                     </a>
 
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
@@ -72,10 +71,9 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-4 col-md-6 mb-4">
-                        <img class="mb-2" src="{{ asset('images/logo.png') }}" alt="Mantra Sakti Autofilm"
+                        <img class="mb-2" src="{{ asset('storage/' . $bio->brand_img) }}" alt="{{ $bio->brand_name }}"
                             height="50">
-                        <p>Pusat distributor dan spesialis pemasangan kaca film premium untuk otomotif dan gedung.
-                            Kualitas, orisinalitas, dan garansi adalah prioritas kami.</p>
+                        <p>{{ $bio->greeting_about }}</p>
                     </div>
                     <div class="col-lg-2 col-md-6 mb-4">
                         <h5>Quick Links</h5>
@@ -92,54 +90,46 @@
                     <div class="col-lg-3 col-md-6 mb-4">
                         <h5>Kontak</h5>
                         <p>
-                            <i class="fas fa-map-marker-alt"></i> Jl. Mekar Puspita No.23, Bandung
+                            <i class="fas fa-map-marker-alt"></i> {{ $bio->address }}
                         </p>
                         <p>
-                            <i class="fas fa-phone-alt"></i> 
-                            <a class="text-white-50" href="https://wa.me/6282121218805" target="_blank">0821-2121-8805</a>
+                            <i class="fas fa-phone-alt"></i>
+                            <a class="text-white-50" href="https://wa.me/{{ format_whatsapp($bio->whatsapp) }}"
+                                target="_blank">{{ $bio->whatsapp }}</a>
                         </p>
                         <p>
-                            <i class="fas fa-envelope"></i> 
-                            <a class="text-white-50" href="mailto:mantrasaktiautofilm@gmail.com">mantrasaktiautofilm@gmail.com</a>
+                            <i class="fas fa-envelope"></i>
+                            <a class="text-white-50"
+                                href="mailto:{{ $bio->email }}">{{ $bio->email }}</a>
                         </p>
                     </div>
                     <div class="col-lg-3 col-md-6 mb-4">
                         <h5>Ikuti Kami</h5>
                         <p>Dapatkan info terbaru dan promo menarik.</p>
                         <div class="social-icons">
-                            <a target="_blank" href="https://www.facebook.com/mantra.sakti.autofilm.antapani/"><i
+                            <a target="_blank" href="{{ $bio->fb_link }}"><i
                                     class="fab fa-facebook-f"></i></a>
                             <a target="_blank"
-                                href="https://www.instagram.com/mantrasaktiautofilm?igshid=ZmVmZTY5ZGE"><i
+                                href="{{ $bio->ig_link }}"><i
                                     class="fab fa-instagram"></i></a>
-                            <a target="_blank" href="https://www.youtube.com/@mantrasaktiautofilm4841"><i
+                            <a target="_blank" href="{{ $bio->youtube_link }}"><i
                                     class="fab fa-youtube"></i></a>
                         </div>
                     </div>
                 </div>
                 <div class="footer-bottom">
-                    <p>&copy; 2025 Mantra Sakti Autofilm. All Rights Reserved.</p>
+                    <p>&copy; 2025 {{ $bio->brand_name }}. All Rights Reserved.</p>
                 </div>
             </div>
         </footer>
 
         <div class="wa-bubble-wrapper">
             <div id="wa-menu">
-                <a href="https://wa.me/6282121218805" target="_blank">
-                    <i class="fas fa-map-pin"></i> Mantra Sakti Pusat
-                </a>
-                <a href="https://wa.me/6281244000805" target="_blank">
-                    <i class="fas fa-map-pin"></i> Outlet Bandung
-                </a>
-                <a href="https://wa.me/6281323230805" target="_blank">
-                    <i class="fas fa-map-pin"></i> Outlet Bekasi
-                </a>
-                <a href="https://wa.me/6282110002805" target="_blank">
-                    <i class="fas fa-map-pin"></i> Outlet Tangerang
-                </a>
-                <a href="https://wa.me/6282110002805" target="_blank">
-                    <i class="fas fa-map-pin"></i> Outlet Cibubur
-                </a>
+                @foreach ($waBubble as $contact)
+                    <a href="https://wa.me/{{ format_whatsapp($contact->telp) }}" target="_blank">
+                        <i class="fas fa-map-pin"></i> {{ $contact->name }}
+                    </a>
+                @endforeach
             </div>
             <div id="wa-toggle">
                 <i class="fab fa-whatsapp"></i>
