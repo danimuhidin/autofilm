@@ -54,7 +54,7 @@
             </div>
             <div class="row">
                 @foreach ($outlets as $outlet)
-                    <div class="col-md-3">
+                    <div class="col-md-3 mb-3">
                         <div class="card">
                             <img src="{{ asset('storage/' . $outlet->image) }}" alt="{{ $outlet->name }}"/>
                             <div class="card-body">
@@ -163,7 +163,7 @@
 
             <div class="row">
                 @foreach ($youtubes as $youtube)
-                    <div class="col-lg-6 mb-4 mb-lg-0 video-wrapper">
+                    <div class="col-lg-6 mb-4 mb-lg-3 video-wrapper">
                         <div class="embed-responsive embed-responsive-16by9">
                             <iframe title="YouTube video player" class="embed-responsive-item" src="{{ $youtube->link }}" allowfullscreen></iframe>
                         </div>
