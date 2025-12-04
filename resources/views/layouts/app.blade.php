@@ -62,29 +62,29 @@
 
     <!-- Schema.org Structured Data -->
     <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "LocalBusiness",
-        "name": "{{ $bio->brand_name }}",
-        "image": "{{ asset('storage/' . $bio->brand_img) }}",
-        "description": "{{ $bio->tagline }}",
-        "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "{{ $bio->address }}",
-            "addressLocality": "Indonesia",
-            "addressCountry": "ID"
-        },
-        "telephone": "{{ $bio->whatsapp }}",
-        "email": "{{ $bio->email }}",
-        "url": "{{ url('/') }}",
-        "priceRange": "$$",
-        "openingHours": "{{ $bio->operation_time }}",
-        "sameAs": [
-            "{{ $bio->fb_link }}",
-            "{{ $bio->ig_link }}",
-            "{{ $bio->youtube_link }}"
+    {!! json_encode([
+        '@context' => 'https://schema.org',
+        '@type' => 'LocalBusiness',
+        'name' => $bio->brand_name,
+        'image' => asset('storage/' . $bio->brand_img),
+        'description' => $bio->tagline,
+        'address' => [
+            '@type' => 'PostalAddress',
+            'streetAddress' => $bio->address,
+            'addressLocality' => 'Indonesia',
+            'addressCountry' => 'ID'
+        ],
+        'telephone' => $bio->whatsapp,
+        'email' => $bio->email,
+        'url' => url('/'),
+        'priceRange' => '$$',
+        'openingHours' => $bio->operation_time,
+        'sameAs' => [
+            $bio->fb_link,
+            $bio->ig_link,
+            $bio->youtube_link
         ]
-    }
+    ], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE) !!}
     </script>
 
     @yield('styles')
@@ -224,6 +224,7 @@
         </div>
     </div>
 
+
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             // 1. Dapatkan semua link dengan class 'wa-link-track'
@@ -361,6 +362,7 @@
             }, 500);
         });
     </script>
+
     @stack('scripts')
 
 </body>
