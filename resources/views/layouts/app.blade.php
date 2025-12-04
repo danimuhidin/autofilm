@@ -90,19 +90,24 @@
     @yield('styles')
     @stack('structured_data')
 
-    @if (config('app.google_tag_id'))
-        <script async src="https://www.googletagmanager.com/gtag/js?id={{ config('app.google_tag_id') }}"></script>
-        <script>
-            window.dataLayer = window.dataLayer || [];
-
-            function gtag() {
-                dataLayer.push(arguments);
-            }
-            gtag('js', new Date());
-
-            gtag('config', '{{ config('app.google_tag_id') }}');
-        </script>
-    @endif
+    <!-- Google Tag Manager -->
+    <script>
+        (function(w, d, s, l, i) {
+            w[l] = w[l] || [];
+            w[l].push({
+                'gtm.start': new Date().getTime(),
+                event: 'gtm.js'
+            });
+            var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s),
+                dl = l != 'dataLayer' ? '&l=' + l : '';
+            j.async = true;
+            j.src =
+                'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+            f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-5JGHNJP9');
+    </script>
+    <!-- End Google Tag Manager -->
 </head>
 
 <body class="hold-transition sidebar-mini" data-spy="scroll" data-target="#mainNavbar" data-offset="80">
@@ -224,38 +229,6 @@
         </div>
     </div>
 
-
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // 1. Dapatkan semua link dengan class 'wa-link-track'
-            const waLinks = document.querySelectorAll('.wa-link-track');
-
-            // 2. Loop melalui setiap link dan tambahkan event listener
-            waLinks.forEach(function(link) {
-                link.addEventListener('click', function(event) {
-                    // Ambil nama kontak dari atribut data-name
-                    const contactName = link.getAttribute('data-name');
-
-                    // Pastikan fungsi gtag sudah dimuat
-                    if (typeof gtag === 'function') {
-                        // 3. Panggil gtag() untuk mencatat event
-                        gtag('event', 'whatsapp_contact_click', {
-                            'event_category': 'Leads',
-                            'event_label': 'Kontak WhatsApp: ' + contactName,
-                            'value': 1, // Berikan nilai jika konversi ini bernilai uang
-                            // Kirim nama kontak sebagai parameter kustom
-                            'contact_name': contactName
-                        });
-
-                        console.log('WA Click Tracked for:', contactName);
-                    }
-
-                    // Biarkan aksi default (membuka link WA) tetap berjalan
-                });
-            });
-        });
-    </script>
-
     <script src="{{ asset('vendor/plugins/bootstrap/js/bootstrap.bundle.min.js') }}?v={{ env('ASSET_VERSION') }}">
     </script>
     <script src="{{ asset('vendor/plugins/sweetalert2/sweetalert2.min.js') }}?v={{ env('ASSET_VERSION') }}"></script>
@@ -299,18 +272,37 @@
 
         // SEO & Accessibility Fixes
         $(document).ready(function() {
-            // Fix lightbox UI links
+            // Fix lightbox UI links - prevent crawler access
             setTimeout(function() {
-                $('.lb-cancel, .lb-close, .lb-prev, .lb-next').each(function() {
-                    $(this).attr({
-                        'rel': 'nofollow',
+                // Target all lightbox control elements
+                $('.lb-cancel, .lb-close, .lb-prev, .lb-next, .lb-data .lb-close').each(function() {
+                    var $elem = $(this);
+
+                    // Add SEO blocking attributes
+                    $elem.attr({
+                        'rel': 'nofollow noindex',
                         'aria-hidden': 'true',
-                        'data-nosnippet': 'true'
+                        'data-nosnippet': 'true',
+                        'data-robotsmeta': 'noindex, nofollow'
                     });
-                    // Remove href to prevent crawling or set to javascript:void(0)
-                    if (!$(this).attr('href') || $(this).attr('href') === '') {
-                        $(this).attr('href', 'javascript:void(0)');
+
+                    // Replace href with javascript:void(0) or # if empty
+                    var href = $elem.attr('href');
+                    if (!href || href === '' || href === '#') {
+                        $elem.attr('href', 'javascript:void(0)');
                     }
+
+                    // Add onclick to prevent default if it's a real link
+                    if (href && href !== '#' && href !== 'javascript:void(0)') {
+                        var originalOnclick = $elem.attr('onclick');
+                        $elem.attr('onclick', 'return false;' + (originalOnclick || ''));
+                    }
+                });
+
+                // Also hide lightbox container from crawlers
+                $('.lightbox, .lb-container, .lb-overlay').attr({
+                    'data-nosnippet': 'true',
+                    'aria-hidden': 'true'
                 });
             }, 100);
 
