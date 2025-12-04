@@ -240,6 +240,19 @@
                     992: {
                         items: 3 // 3 item di desktop
                     }
+                },
+                onInitialized: function() {
+                    // Add accessibility attributes
+                    setTimeout(function() {
+                        $('#produkTerkaitCarousel .owl-dot').each(function(index) {
+                            $(this).attr({
+                                'aria-label': 'Go to related product ' + (
+                                    index + 1),
+                                'role': 'button',
+                                'title': 'Related product ' + (index + 1)
+                            });
+                        });
+                    }, 100);
                 }
             });
 

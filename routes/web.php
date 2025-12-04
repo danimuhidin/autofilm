@@ -18,6 +18,9 @@ Route::get('/kategori-produk', [HomeController::class, 'kategori_produk'])->name
 Route::get('/artikel', [HomeController::class, 'artikel'])->name('artikel');
 Route::get('/artikel/{slug}', [HomeController::class, 'artikel_detail'])->name('artikel-detail');
 
+// Sitemap
+Route::get('/sitemap.xml', [\App\Http\Controllers\SitemapController::class, 'index'])->name('sitemap');
+
 Auth::routes();
 Route::middleware(['auth', 'admin'])->prefix('admin')->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('admin.dashboard');

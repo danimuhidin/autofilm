@@ -343,6 +343,19 @@
                     992: {
                         items: 3
                     }
+                },
+                onInitialized: function() {
+                    // Add accessibility attributes after carousel is initialized
+                    setTimeout(function() {
+                        $('#testimoni-slider .owl-dot').each(function(index) {
+                            $(this).attr({
+                                'aria-label': 'Go to testimonial ' + (index +
+                                    1),
+                                'role': 'button',
+                                'title': 'Testimonial ' + (index + 1)
+                            });
+                        });
+                    }, 100);
                 }
             });
         });

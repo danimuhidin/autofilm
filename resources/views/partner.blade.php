@@ -188,6 +188,19 @@
                     1000: {
                         items: 5
                     }
+                },
+                onInitialized: function() {
+                    // Add accessibility attributes
+                    setTimeout(function() {
+                        $('.logo-carousel .owl-dot').each(function(index) {
+                            $(this).attr({
+                                'aria-label': 'Go to partner logo slide ' + (
+                                    index + 1),
+                                'role': 'button',
+                                'title': 'Partner slide ' + (index + 1)
+                            });
+                        });
+                    }, 100);
                 }
             });
 

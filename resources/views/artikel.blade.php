@@ -1,6 +1,13 @@
 @extends('layouts.app')
 
 @section('title', 'Artikel & Berita - Mantra Sakti Autofilm')
+@section('meta_description', 'Baca artikel dan berita terkini seputar kaca film, tips perawatan mobil, teknologi window
+    film, dan informasi industri otomotif dari Mantra Sakti Autofilm.')
+@section('meta_keywords', 'artikel kaca film, berita otomotif, tips kaca film, perawatan kaca film, teknologi window
+    film, informasi kaca film mobil')
+@section('og_title', 'Artikel & Berita Kaca Film - Mantra Sakti Autofilm')
+@section('og_description', 'Dapatkan informasi terkini seputar kaca film, tips perawatan, dan berita industri
+    otomotif.')
 @section('page-title', 'Artikel & Berita')
 
 @section('content')

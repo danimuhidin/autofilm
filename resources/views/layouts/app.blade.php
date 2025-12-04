@@ -5,8 +5,35 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
+
+    <!-- SEO Meta Tags -->
     <title>@yield('title', $bio->title)</title>
+    <meta name="description" content="@yield('meta_description', $bio->tagline . ' - Distributor resmi kaca film berkualitas tinggi untuk mobil dan gedung. Layanan profesional, garansi resmi, dan harga terbaik.')">
+    <meta name="keywords" content="@yield('meta_keywords', 'kaca film mobil, kaca film gedung, window film, 3M, VKool, Llumar, tinting mobil, kaca film premium, kaca film termurah, pemasangan kaca film, auto film')">
+    <meta name="author" content="{{ $bio->brand_name }}">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="Indonesian">
+    <link rel="canonical" href="@yield('canonical', url()->current())">
+
+    <!-- Open Graph / Facebook Meta Tags -->
+    <meta property="og:type" content="@yield('og_type', 'website')">
+    <meta property="og:url" content="{{ url()->current() }}">
+    <meta property="og:title" content="@yield('og_title', $bio->title)">
+    <meta property="og:description" content="@yield('og_description', $bio->tagline . ' - Distributor resmi kaca film berkualitas tinggi untuk mobil dan gedung.')">
+    <meta property="og:image" content="@yield('og_image', asset('storage/' . $bio->brand_img))">
+    <meta property="og:site_name" content="{{ $bio->brand_name }}">
+    <meta property="og:locale" content="id_ID">
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="{{ url()->current() }}">
+    <meta name="twitter:title" content="@yield('twitter_title', $bio->title)">
+    <meta name="twitter:description" content="@yield('twitter_description', $bio->tagline)">
+    <meta name="twitter:image" content="@yield('twitter_image', asset('storage/' . $bio->brand_img))">
+
+    <!-- Favicon -->
     <link rel="icon" type="image/png" href="{{ asset('storage/' . $bio->favicon) }}">
+    <link rel="apple-touch-icon" href="{{ asset('storage/' . $bio->favicon) }}">
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
     <link rel="stylesheet"
@@ -21,8 +48,47 @@
     <link rel="stylesheet"
         href="{{ asset('vendor/plugins/lightbox2/lightbox.min.css') }}?v={{ env('ASSET_VERSION') }}">
     <link rel="stylesheet" href="{{ asset('css/style.css') }}?v={{ env('ASSET_VERSION') }}">
+
+    <!-- SEO Fix for Lightbox Links -->
+    <style>
+        /* Hide lightbox UI elements from crawlers */
+        .lb-cancel,
+        .lb-close {
+            pointer-events: auto !important;
+        }
+    </style>
+
     <script src="{{ asset('vendor/plugins/jquery/jquery.min.js') }}?v={{ env('ASSET_VERSION') }}"></script>
+
+    <!-- Schema.org Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "{{ $bio->brand_name }}",
+        "image": "{{ asset('storage/' . $bio->brand_img) }}",
+        "description": "{{ $bio->tagline }}",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "{{ $bio->address }}",
+            "addressLocality": "Indonesia",
+            "addressCountry": "ID"
+        },
+        "telephone": "{{ $bio->whatsapp }}",
+        "email": "{{ $bio->email }}",
+        "url": "{{ url('/') }}",
+        "priceRange": "$$",
+        "openingHours": "{{ $bio->operation_time }}",
+        "sameAs": [
+            "{{ $bio->fb_link }}",
+            "{{ $bio->ig_link }}",
+            "{{ $bio->youtube_link }}"
+        ]
+    }
+    </script>
+
     @yield('styles')
+    @stack('structured_data')
 
     @if (config('app.google_tag_id'))
         <script async src="https://www.googletagmanager.com/gtag/js?id={{ config('app.google_tag_id') }}"></script>
@@ -72,7 +138,8 @@
                             </li>
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownKontak"
-                                    role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    role="button" data-toggle="dropdown" aria-haspopup="true"
+                                    aria-expanded="false">
                                     Kontak & Outlet
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdownKontak">
@@ -227,6 +294,71 @@
                     $('#wa-menu').slideUp(300);
                 }
             }
+        });
+
+        // SEO & Accessibility Fixes
+        $(document).ready(function() {
+            // Fix lightbox UI links
+            setTimeout(function() {
+                $('.lb-cancel, .lb-close, .lb-prev, .lb-next').each(function() {
+                    $(this).attr({
+                        'rel': 'nofollow',
+                        'aria-hidden': 'true',
+                        'data-nosnippet': 'true'
+                    });
+                    // Remove href to prevent crawling or set to javascript:void(0)
+                    if (!$(this).attr('href') || $(this).attr('href') === '') {
+                        $(this).attr('href', 'javascript:void(0)');
+                    }
+                });
+            }, 100);
+
+            // Fix Owl Carousel accessibility
+            setTimeout(function() {
+                // Add aria-labels to owl carousel dots
+                $('.owl-dot').each(function(index) {
+                    $(this).attr({
+                        'aria-label': 'Go to slide ' + (index + 1),
+                        'role': 'button',
+                        'title': 'Slide ' + (index + 1)
+                    });
+                });
+
+                // Add aria-labels to owl carousel navigation
+                $('.owl-prev').attr({
+                    'aria-label': 'Previous slide',
+                    'title': 'Previous'
+                });
+                $('.owl-next').attr({
+                    'aria-label': 'Next slide',
+                    'title': 'Next'
+                });
+
+                // Fix links without discernible names
+                $('a:not([aria-label]):not([title])').each(function() {
+                    var $this = $(this);
+                    var text = $this.text().trim();
+                    var img = $this.find('img');
+
+                    if (text) {
+                        // Link has text, use it as aria-label
+                        $this.attr('aria-label', text);
+                    } else if (img.length > 0) {
+                        // Link has image, use img alt as aria-label
+                        var altText = img.attr('alt') || 'Image link';
+                        $this.attr('aria-label', altText);
+                    } else if ($this.hasClass('lb-') || $this.parents('.lightbox').length > 0) {
+                        // Lightbox elements, skip
+                        return;
+                    } else {
+                        // Generic fallback
+                        var href = $this.attr('href');
+                        if (href && href !== '#' && href !== 'javascript:void(0)') {
+                            $this.attr('aria-label', 'Link to ' + href);
+                        }
+                    }
+                });
+            }, 500);
         });
     </script>
     @stack('scripts')

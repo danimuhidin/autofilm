@@ -1,7 +1,72 @@
 @extends('layouts.app')
 
 @section('title', $artikel->title . ' - Mantra Sakti Autofilm')
+@section('meta_description', Str::limit(strip_tags($artikel->content), 155))
+@section('meta_keywords', $artikel->tags->pluck('name')->implode(', ') . ', kaca film, artikel kaca film')
+@section('og_title', $artikel->title)
+@section('og_description', Str::limit(strip_tags($artikel->content), 200))
+@section('og_image', $artikel->img_cover ? asset($artikel->img_cover) : asset('storage/' . $bio->brand_img))
+@section('og_type', 'article')
+@section('canonical', route('artikel-detail', $artikel->slug))
 @section('page-title', $artikel->title)
+
+@push('structured_data')
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "{{ $artikel->title }}",
+    "description": "{{ Str::limit(strip_tags($artikel->content), 200) }}",
+    "image": "{{ $artikel->img_cover ? asset($artikel->img_cover) : asset('storage/' . $bio->brand_img) }}",
+    "author": {
+        "@type": "Person",
+        "name": "{{ $artikel->author }}"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "{{ $bio->brand_name }}",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "{{ asset('storage/' . $bio->brand_img) }}"
+        }
+    },
+    "datePublished": "{{ $artikel->created_at->toIso8601String() }}",
+    "dateModified": "{{ $artikel->updated_at->toIso8601String() }}",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "{{ route('artikel-detail', $artikel->slug) }}"
+    },
+    "keywords": "{{ $artikel->tags->pluck('name')->implode(', ') }}"
+}
+</script>
+
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+        {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "{{ route('home') }}"
+        },
+        {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Artikel",
+            "item": "{{ route('artikel') }}"
+        },
+        {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "{{ $artikel->title }}",
+            "item": "{{ route('artikel-detail', $artikel->slug) }}"
+        }
+    ]
+}
+</script>
+@endpush
 
 @section('content')
 
